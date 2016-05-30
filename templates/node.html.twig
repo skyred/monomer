@@ -84,9 +84,8 @@
 {% polymer element 'node-element' %}
 <template>
     <article>
-fdfg
         <h2>
-          <a href="{{ url }}" rel="bookmark">ff<content select=".label"></content></a>
+          <a href="{{ url }}" rel="bookmark"><content select=".label"></content></a>
         </h2>
 
         <footer class="node__meta">
@@ -112,8 +111,9 @@ fdfg
 {% endpolymer %}
 
 <node-element url="{{ url }}">
-    <div class="label">{{ label }}</div>
-    <div class="authorName">{{ author_name }}</div>
-    <div class="date">{{ date }}</div>
-    <div class="content">{{ content }}</div>
+    <span class="label">{{ label }}</span>
+    <span class="authorName">{{ author_name }}</span>
+    <span class="date">{{ date }}</span>
+    <span class="content">{{ content }}</span>
+
 </node-element>
