@@ -81,35 +81,8 @@
   ]
 %}
 {{ attach_library('classy/node') }}
-{% polymer element 'node-element' %}
-<template>
-    <article>
-        <h2>
-          <a href="{{ url }}" rel="bookmark"><content select=".label"></content></a>
-        </h2>
-
-        <footer class="node__meta">
-          <div>
-            Submitted by <content select=".authorName"></content> on <content select=".date"></content>
-          </div>
-        </footer>
-
-      <div>
-        <content select=".content"></content>
-      </div>
-
-    </article>
-</template>
-<script>
-  Polymer({
-    is: 'node-element',
-    properties: {
-      url: String,
-    }
-  });
-</script>
-{% endpolymer %}
-
+{{ attach_library('twig_polymer/webcomponents-lite') }}
+{% polymer import "custom/node-element.html" %}
 <node-element url="{{ url }}">
     <span class="label">{{ label }}</span>
     <span class="authorName">{{ author_name }}</span>
