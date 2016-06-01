@@ -1,0 +1,28 @@
+{% polymer element "node-element" %}
+<template>
+    <article>
+        <h2>
+          <a href="{{ url }}" rel="bookmark"><content select=".label"></content></a>
+        </h2>
+
+        <footer class="node__meta">
+          <div>
+            <twig>{% trans %}Submitted by {%  endtrans %}</twig><content select=".authorName"></content><twig>{% trans %} on {%  endtrans %}</twig><content select=".date"></content>
+          </div>
+        </footer>
+
+      <div>
+        <content select=".content"></content>
+      </div>
+
+    </article>
+</template>
+<script>
+  Polymer({
+    is: 'node-element',
+    properties: {
+      url: String,
+    }
+  });
+</script>
+{% endpolymer %}

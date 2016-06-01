@@ -82,11 +82,11 @@
 %}
 {{ attach_library('classy/node') }}
 {{ attach_library('twig_polymer/webcomponents-lite') }}
-{% polymer import "custom/node-element.html" %}
+<link rel="import" href="/polymer-element/polymer/node-element">
 <node-element url="{{ url }}">
-    <span class="label">{{ label }}</span>
-    <span class="authorName">{{ author_name }}</span>
-    <span class="date">{{ date }}</span>
-    <span class="content">{{ content }}</span>
+  <span class="content">{{ content }}</span>
+  <span class="authorName">{{ author_name }}</span>
+  <span class="date">{{ date }}</span>
+  <span class="label">{{ label }}</span>
 
 </node-element>

@@ -1,0 +1,20 @@
+{% polymer import "hello.html" %}
+{% trans %} Hello from Polymer {% endtrans %}
+<link rel="import" href="/libraries/bower_components/polymer/polymer.html">
+
+<dom-module id="node-element-two" >
+
+<template>
+    <article>
+         <h1> ELEMENT TWO</h1>
+    </article>
+</template>
+<script>
+  Polymer({
+    is: 'node-element-two',
+    properties: {
+      url: String,
+    }
+  });
+</script>
+</dom-module>
