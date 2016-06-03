@@ -87,5 +87,6 @@
               maincontent="{{ render_var(content) | e('html_attr')}}"
               author-name="{{ render_var(author_name) | e('html_attr')}}"
               date="{{ render_var(date)|e('html_attr') }}"
-              label="{{ render_var(label)|e('html_attr') }}">
+              label="{{ render_var(label)|e('html_attr') }}"
+              attributes1="{{ render_var(attributes.addClass(classes)) |e('html_attr') }}">
 </node-element>

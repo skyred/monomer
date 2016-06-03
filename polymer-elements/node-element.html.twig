@@ -1,17 +1,18 @@
-{% polymer import "juicy-html/juicy-html.html" %}
 {% polymer element "node-element" %}
 <template>
-    <article>
+    <article [[attributes1]]>
         <h2>
           <a href="[[ url ]]" rel="bookmark" inner-h-t-m-l="[[ label ]]"></a>
         </h2>
 
         <footer class="node__meta">
           <div inner-h-t-m-l='<twig>{% trans %}Submitted by [[ authorName ]] on [[ date ]]{% endtrans %}</twig>'>
+
           </div>
         </footer>
 
       <div inner-h-t-m-l="[[ maincontent ]]">
+
       </div>
 
     </article>
@@ -20,11 +21,12 @@
   Polymer({
     is: 'node-element',
     properties: {
-      url: String,
+        url: String,
         maincontent: String,
         authorName: String,
         date: String,
         label: String,
+        attributes1:String
     }
   });
 </script>
