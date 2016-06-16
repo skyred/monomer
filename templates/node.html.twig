@@ -71,22 +71,50 @@
  */
 #}
 {%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-  ]
+set classes = [
+'node',
+'node--type-' ~ node.bundle|clean_class,
+node.isPromoted() ? 'node--promoted',
+node.isSticky() ? 'node--sticky',
+not node.isPublished() ? 'node--unpublished',
+view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'polymerNode'
+]
 %}
-{{ attach_library('classy/node') }}
-{{ attach_library('twig_polymer/webcomponents-lite') }}
-{% polymer import "node-element" %}
-<node-element url="{{ url| e('html_attr') }}"
-              maincontent="{{ render_var(content) | e('html_attr')}}"
-              author-name="{{ render_var(author_name) | e('html_attr')}}"
-              date="{{ render_var(date)|e('html_attr') }}"
-              label="{{ render_var(label)|e('html_attr') }}"
-              attributes1="{{ render_var(attributes.addClass(classes)) |e('html_attr') }}">
-</node-element>
+<style>
+  .polymerNode {
+    background-color: #fff4f4;
+  }
+  .polymerNode h2 {
+    font-size: 16px;
+  }
+
+  .polymerNode .node__content {
+    font-size: 12px;
+  }
+</style>
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+
+</article>
