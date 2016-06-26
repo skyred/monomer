@@ -1,0 +1,10 @@
+#sidebar-first { 
+  width: 20%;
+  float: left;
+}
+
+.column.main-content {
+  width: 80%;
+  float: right;
+}
+
