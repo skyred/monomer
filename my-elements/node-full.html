@@ -1,0 +1,37 @@
+<link rel="import" href="polymer.html">
+
+<dom-module id="node-full">
+<template>
+    <article [[ attributes1 ]]>
+        [[ title_prefix ]]
+        [[ title_suffix ]]
+    {% if display_submitted %}
+    <footer>
+        [[ author_picture ]]
+        <div[[ author_attributes ]]>
+        Submitted by [[ authorName ]] on [[ date ]]
+        [[ metadata ]]
+        </div>
+    </footer>
+    {% endif %}
+
+    <div [[ content_attributes ]]>
+    [[ maincontent ]]
+    </div>
+    </article>
+</template>
+<script>
+  Polymer({
+    is: 'node-full',
+    properties: {
+        url: String,
+        maincontent: String,
+        authorName: String,
+        date: String,
+        label: String,
+        attributes1: String,
+        metadata: String,
+    }
+  });
+</script>
+</dom-module>
