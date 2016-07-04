@@ -1,4 +1,6 @@
-{% polymer element "node-element" %}
+<link rel="import" href="polymer.html">
+
+<dom-module id="node-element">
 <template>
     <article [[attributes1]]>
         <h2>
@@ -6,7 +8,7 @@
         </h2>
 
         <footer class="node__meta">
-          <div inner-h-t-m-l='<twig>{% trans %}Submitted by [[ authorName ]] on [[ date ]]{% endtrans %}</twig>'>
+          <div inner-h-t-m-l='Submitted by [[ authorName ]] on [[ date ]]'>
 
           </div>
         </footer>
@@ -30,5 +32,4 @@
     }
   });
 </script>
-{% endpolymer %}
-
+</dom-module>
