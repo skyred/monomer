@@ -70,28 +70,22 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes }}>
-
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes }}>
-    {{ content }}
-  </div>
-
-</article>
+{{ attach_library('twig_polymer/webcomponents-lite') }}
+{% if not page %}
+  {% polymer import "node-teaser" %}
+  <node-teaser
+          url="{{ url| e('html_attr') }}"
+          maincontent="{{ render_var(content) | e('html_attr')}}"
+          author-name="{{ render_var(author_name) | e('html_attr')}}"
+          date="{{ render_var(date)|e('html_attr') }}"
+          label="{{ render_var(label)|e('html_attr') }}"
+  ></node-teaser>
+{% else %}
+  {% polymer import "node-full" %}
+  <node-full
+          url="{{ url| e('html_attr') }}"
+          maincontent="{{ render_var(content) | e('html_attr')}}"
+          author-name="{{ render_var(author_name) | e('html_attr')}}"
+          date="{{ render_var(date)|e('html_attr') }}"
+          label="{{ render_var(label)|e('html_attr') }}"></node-full>
+{% endif %}
