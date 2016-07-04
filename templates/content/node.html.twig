@@ -77,15 +77,18 @@
           url="{{ url| e('html_attr') }}"
           maincontent="{{ render_var(content) | e('html_attr')}}"
           author-name="{{ render_var(author_name) | e('html_attr')}}"
+          author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
+          author-picture="{{ render_var(author_picture) | e('html_attr')}}"
           date="{{ render_var(date)|e('html_attr') }}"
           label="{{ render_var(label)|e('html_attr') }}"
   ></node-teaser>
 {% else %}
   {% polymer import "node-full" %}
   <node-full
-          url="{{ url| e('html_attr') }}"
           maincontent="{{ render_var(content) | e('html_attr')}}"
           author-name="{{ render_var(author_name) | e('html_attr')}}"
+          author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
+          author-picture="{{ render_var(author_picture) | e('html_attr')}}"
           date="{{ render_var(date)|e('html_attr') }}"
           label="{{ render_var(label)|e('html_attr') }}"></node-full>
 {% endif %}
