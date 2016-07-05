@@ -35,11 +35,11 @@
   <pager>
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
-        <pager-item href="{{ items.first.href }}" text="{{ items.first.text|default('« First'|t)|e('html_attr') }}"></pager-item>
+        <pager-item url="{{ items.first.href }}" text="{{ items.first.text|default('« First'|t)|e('html_attr') }}"></pager-item>
       {% endif %}
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
-        <pager-item href="{{ items.previous.href }}" text="{{ items.previous.text|default('‹ Previous'|t)|e('html_attr') }}"></pager-item>
+        <pager-item url="{{ items.previous.href }}" text="{{ items.previous.text|default('‹ Previous'|t)|e('html_attr') }}"></pager-item>
       {% endif %}
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
@@ -52,7 +52,7 @@
         {% else %}
           {% set title = 'Go to page @key'|t({'@key': key}) %}
         {% endif %}
-        <pager-item href="{{ item.href }}"
+        <pager-item url="{{ item.href }}"
                     title="{{ title }}"
                     {% if current == key %}
                     is-current="true"
@@ -65,11 +65,11 @@
       {% endif %}
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
-        <pager-item href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" text="{{ items.next.text|default('Next ›'|t)|e('html_attr') }}"></pager-item>
+        <pager-item url="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" text="{{ items.next.text|default('Next ›'|t)|e('html_attr') }}"></pager-item>
       {% endif %}
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
-        <pager-item href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" text="{{ items.last.text|default('Last »'|t)|e('html_attr') }}"></pager-item>
+        <pager-item url="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" text="{{ items.last.text|default('Last »'|t)|e('html_attr') }}"></pager-item>
       {% endif %}
   </pager>
 {% endif %}

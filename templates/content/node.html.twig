@@ -75,7 +75,8 @@
   {% polymer import "node-teaser.html" %}
   <node-teaser
           url="{{ url| e('html_attr') }}"
-          author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
+          attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
+          author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
           {% if display_submitted %}
           display-submitted="true"
           {% endif %}>
@@ -99,7 +100,8 @@
 {% else %}
   {% polymer import "node-full" %}
   <node-full
-          author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
+          author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
+          attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
           {% if display_submitted %}
           display-submitted="true"
           {% endif %}>
