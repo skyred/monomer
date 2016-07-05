@@ -26,6 +26,35 @@
    <content select="data-author-picture">
    ```
 
+## (Dev) Boolean variable conversion pattern
+Twig variable:
+```
+{{ display_submitted }}
+```
+Converts to:
+```
+<element
+  {% if display_submitted %}
+   display-submitted="true"
+  {% endif %}>
+```
+In Polymer element definition, add a property:
+```
+  displaySubmitted: Boolean,
+```
+In DOM template, use Polymer's `dom-if` binding:
+```
+    <template is="dom-if" if="{{ displaySubmitted }}">
+        <footer>
+            <content select="data-author-picture"></content>
+            <div [[ authorAttributes ]]>
+                Submitted by <content select="data-author-name"></content> on <content select="data-date"></content>
+                [[ metadata ]]
+            </div>
+        </footer>
+    </template>
+```
+
 ## Simplified Variables
 Drupal Twig templates has a lot of obscure and cumbersome variables such as `attributes`, `title_prefix`.
 
