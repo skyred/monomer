@@ -5,18 +5,18 @@
     <article [[ attributes1 ]]>
         [[ titlePrefix ]]
         [[ titleSuffix ]]
-    {% if display_submitted %}
+    <template is="dom-if" if="{{ displaySubmitted }}">
         <footer>
-            [[ authorPicture ]]
+            <content select="data-author-picture"></content>
             <div [[ authorAttributes ]]>
-                Submitted by [[ authorName ]] on [[ date ]]
+                Submitted by <content select="data-author-name"></content> on <content select="data-date"></content>
                 [[ metadata ]]
             </div>
         </footer>
-    {% endif %}
+    </template>
 
     <div [[ contentAttributes ]]>
-    [[ maincontent ]]
+        <content select="data-main-content"></content>
     </div>
     </article>
 </template>
@@ -24,16 +24,13 @@
   Polymer({
     is: 'node-full',
     properties: {
-        maincontent: String,
-        authorName: String,
-        authorPicture: String,
         authorAttributes: String,
-        date: String,
         titleAttributes: String,
         titlePrefix: String,
         titleSuffix: String,
         contentAttributes: String,
         metadata: String,
+        displaySubmitted: Boolean,
     }
   });
 </script>

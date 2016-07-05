@@ -75,20 +75,45 @@
   {% polymer import "node-teaser.html" %}
   <node-teaser
           url="{{ url| e('html_attr') }}"
-          maincontent="{{ render_var(content) | e('html_attr')}}"
-          author-name="{{ render_var(author_name) | e('html_attr')}}"
           author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
-          author-picture="{{ render_var(author_picture) | e('html_attr')}}"
-          date="{{ render_var(date)|e('html_attr') }}"
-          label="{{ render_var(label)|e('html_attr') }}"
-  ></node-teaser>
+          {% if display_submitted %}
+          display-submitted="true"
+          {% endif %}>
+    <data-label>
+      {{ label }}
+    </data-label>
+    <data-date>
+      {{ date }}
+    </data-date>
+    <data-author-picture>
+      {{ author_picture }}
+    </data-author-picture>
+    <data-author-name>
+      {{ author_name }}
+    </data-author-name>
+    <data-main-content>
+      {{ content }}
+    </data-main-content>
+
+  </node-teaser>
 {% else %}
   {% polymer import "node-full" %}
   <node-full
-          maincontent="{{ render_var(content) | e('html_attr')}}"
-          author-name="{{ render_var(author_name) | e('html_attr')}}"
           author-attributes="{{ render_var(author_attributes) | e('html_attr')}}"
-          author-picture="{{ render_var(author_picture) | e('html_attr')}}"
-          date="{{ render_var(date)|e('html_attr') }}"
-          label="{{ render_var(label)|e('html_attr') }}"></node-full>
+          {% if display_submitted %}
+          display-submitted="true"
+          {% endif %}>
+    <data-date>
+      {{ date }}
+    </data-date>
+    <data-author-picture>
+      {{ author_picture }}
+    </data-author-picture>
+    <data-author-name>
+      {{ author_name }}
+    </data-author-name>
+    <data-main-content>
+      {{ content }}
+    </data-main-content>
+  </node-full>
 {% endif %}

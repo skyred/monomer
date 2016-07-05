@@ -5,21 +5,21 @@
     <article [[ attributes1 ]]>
         [[ titlePrefix ]]
         <h2 [[ titleAttributes ]]>
-        <a href="[[ url ]]" rel="bookmark">[[ label ]]</a>
+        <a href="[[ url ]]" rel="bookmark"><content select="data-label"></content></a>
         </h2>
         [[ titleSuffix ]]
-    {% if display_submitted %}
-    <footer>
-        [[ authorPicture ]]
-        <div [[ authorAttributes ]]>
-        Submitted by [[ authorName ]] on [[ date ]]
-        [[ metadata ]]
-        </div>
-    </footer>
-    {% endif %}
+        <template is="dom-if" if="{{ displaySubmitted }}">
+            <footer>
+                <content select="data-author-picture"></content>
+                <div [[ authorAttributes ]]>
+                    Submitted by <content select="data-author-name"></content> on <content select="data-date"></content>
+                    [[ metadata ]]
+                </div>
+            </footer>
+        </template>
 
     <div [[ contentAttributes ]]>
-    [[ maincontent ]]
+        <content select="data-main-content"></content>
     </div>
     </article>
 </template>
@@ -28,9 +28,6 @@
     is: 'node-teaser',
     properties: {
         url: String,
-        maincontent: String,
-        authorName: String,
-        authorPicture: String,
         authorAttributes: String,
         date: String,
         label: String,
