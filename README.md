@@ -9,6 +9,31 @@
  - Twig variable: underscore style. `content_attributes`
  - HTML data attribute: dash style. `content-attributes` or `data-content-attributes`
  - Inside Polymer DOM template: camel case. `contentAttributes`
+ - Custom DOM:
+   ```
+   <div class="author-picture"></div>
+
+   or
+
+   <data-author-picture></data-author-picture>
+   ```
+   And in DOM template:
+   ```
+   <content select=".author-picture'>
+
+   or
+
+   <content select="data-author-picture">
+   ```
+
+## Simplified Variables
+Drupal Twig templates has a lot of obscure and cumbersome variables such as `attributes`, `title_prefix`.
+
+In Polymer base theme we combine and simplify those variables into simple ones for your use in your Polymer element.
+
+However, this could also mean less ability for customization.
+
+To access more raw variables in the original Twig template (which are often big HTML blocs), override the respective Twig template in your sub-theme.
 
 ## Creating a sub-theme
  - TODO

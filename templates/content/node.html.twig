@@ -72,7 +72,7 @@
 #}
 {{ attach_library('twig_polymer/webcomponents-lite') }}
 {% if not page %}
-  {% polymer import "node-teaser" %}
+  {% polymer import "node-teaser.html" %}
   <node-teaser
           url="{{ url| e('html_attr') }}"
           maincontent="{{ render_var(content) | e('html_attr')}}"
