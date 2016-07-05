@@ -1,4 +1,5 @@
 <link rel="import" href="polymer.html">
+<link rel="import" href="polymer-helper.html">
 
 <dom-module id="node-full">
 <template>
@@ -15,7 +16,7 @@
         </footer>
     </template>
 
-    <div [[ contentAttributes ]]>
+    <div class="content">
         <content select="data-main-content"></content>
     </div>
     </article>
@@ -29,9 +30,13 @@
         titleAttributes: String,
         titlePrefix: String,
         titleSuffix: String,
-        contentAttributes: String,
+        contentAttributes: Object,
         metadata: String,
         displaySubmitted: Boolean,
+    },
+    ready: function () {
+        console.log(this.$$('.content'));
+        PolymerHelper.attachAttributes(this.$$('.content'), this.contentAttributes);
     }
   });
 </script>

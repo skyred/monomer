@@ -104,7 +104,8 @@
           attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
           {% if display_submitted %}
           display-submitted="true"
-          {% endif %}>
+          {% endif %}
+          content-attributes="{{ content_attributes.toArray()|json_encode|e('html_attr') }}">
     <data-date>
       {{ date }}
     </data-date>
