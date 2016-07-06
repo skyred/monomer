@@ -19,6 +19,7 @@
     "juicy-html": "^1.1.0",
     "polymer": "^1.5.0",
     "webcomponentsjs": "^0.7.22",
-    "paper-button": "PolymerElements/paper-button#^1.0.0"
+    "paper-button": "PolymerElements/paper-button#^1.0.0",
+    "paper-card": "PolymerElements/paper-card#^1.0.0"
   }
 }

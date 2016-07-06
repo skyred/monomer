@@ -71,15 +71,22 @@
  */
 #}
 {{ attach_library('twig_polymer/webcomponents-lite') }}
-{% if not page %}
-  {% polymer import "node-teaser.html" %}
-  <node-teaser
-          url="{{ url| e('html_attr') }}"
-          attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
+  {% polymer import "node-full.html" %}
+  <node-full
           author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
+          author-name="{{ render_var(author_name) |e('html_attr')}}"
+          attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
+          url="{{ url| e('html_attr') }}"
+          {% if not page %}
+          show-title="true"
+          {% endif %}
+          title="{{ node.getTitle() | e('html_attr') }}"
+          created="{{ node.getCreatedTime() | date | e('html_attr') }}"
           {% if display_submitted %}
           display-submitted="true"
-          {% endif %}>
+          {% endif %}
+          content-attributes="{{ content_attributes.toArray()|json_encode|e('html_attr') }}"
+          fields="{{ node.getFields() |json_encode|e('html_attr') }}">
     <data-label>
       {{ label }}
     </data-label>
@@ -95,28 +102,4 @@
     <data-main-content>
       {{ content }}
     </data-main-content>
-
-  </node-teaser>
-{% else %}
-  {% polymer import "node-full" %}
-  <node-full
-          author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
-          attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
-          {% if display_submitted %}
-          display-submitted="true"
-          {% endif %}
-          content-attributes="{{ content_attributes.toArray()|json_encode|e('html_attr') }}">
-    <data-date>
-      {{ date }}
-    </data-date>
-    <data-author-picture>
-      {{ author_picture }}
-    </data-author-picture>
-    <data-author-name>
-      {{ author_name }}
-    </data-author-name>
-    <data-main-content>
-      {{ content }}
-    </data-main-content>
   </node-full>
-{% endif %}

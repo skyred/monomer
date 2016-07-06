@@ -1,11 +1,20 @@
 <link rel="import" href="polymer/polymer.html">
+<link rel="import" href="paper-card/paper-card.html">
 <link rel="import" href="polymer-helper.html">
+<link rel="import" href="echo-html.html">
 
 <dom-module id="node-full">
 <template>
-    <article [[ attributes1 ]]>
-        [[ titlePrefix ]]
-        [[ titleSuffix ]]
+    <article>
+
+        <echo-html html$="[[ titlePrefix ]]"></echo-html>
+        <template is="dom-if" if="{{ showTitle }}">
+        <h2 [[ titleAttributes ]]>
+            <a href="[[ url ]]" rel="bookmark"><content select="data-label"></content></a>
+        </h2>
+        </template>
+        <echo-html html$="[[ titleSuffix ]]"></echo-html>
+
     <template is="dom-if" if="{{ displaySubmitted }}">
         <footer>
             <content select="data-author-picture"></content>
@@ -17,25 +26,34 @@
     </template>
 
     <div class="content">
-        <content select="data-main-content"></content>
+
     </div>
+        <paper-card heading="[[title]]">
+            <div class="card-content">
+                <content select="data-main-content"></content>
+            </div>
+        </paper-card>
     </article>
 </template>
 <script>
   Polymer({
     is: 'node-full',
     properties: {
+        url: String,
         authorAttributes: Object,
         attributes: Object,
         titleAttributes: String,
+        title: String,
         titlePrefix: String,
         titleSuffix: String,
+        created: String,
         contentAttributes: Object,
         metadata: String,
         displaySubmitted: Boolean,
+        showTitle: Boolean,
     },
     ready: function () {
-        console.log(this.$$('.content'));
+        //console.log(this.$$('.content'));
         PolymerHelper.attachAttributes(this.$$('.content'), this.contentAttributes);
     }
   });
