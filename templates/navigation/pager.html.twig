@@ -32,7 +32,7 @@
 {% if items %}
   {% polymer import "pager.html" %}
   {% polymer import "pager-item.html" %}
-  <pager>
+  <x-pager items="{{ items |json_encode| e('html_attr') }}">
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
         <pager-item url="{{ items.first.href }}" text="{{ items.first.text|default('« First'|t)|e('html_attr') }}"></pager-item>
@@ -71,5 +71,5 @@
       {% if items.last %}
         <pager-item url="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" text="{{ items.last.text|default('Last »'|t)|e('html_attr') }}"></pager-item>
       {% endif %}
-  </pager>
+  </x-pager>
 {% endif %}

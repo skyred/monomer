@@ -1,13 +1,39 @@
 <link rel="import" href="polymer.html">
+<link rel="import" href="pager-item.html">
 
-<dom-module id="pager">
+<!--
+  Pager Element <x-pager>
+
+  You may choose to use <content></content> directly, which are <pager-item>s rendered by Drupal.
+  Alternatively, you may also construct a pager based on the items property.
+
+  A sample "items" property looks like this:
+  {"pages": {
+     "1": {"href":"?page=0"},
+     "2": {"href":"?page=1"}
+     },
+   "next": {"href":"?page=1","text":"Next \u203a"},
+   "last": {"href":"?page=1","text":"Last \u00bb"}
+  }
+-->
+<dom-module id="x-pager">
     <template>
+        <style>
+            :host {
+                display: block;
+                border: 1px solid red;
+            }
+        </style>
         <content></content>
     </template>
     <script>
         Polymer({
-            is: 'pager',
+            is: 'x-pager',
             properties: {
+                items: Object,
+            },
+            ready: function () {
+                //console.log('a', this.items);
             }
         });
     </script>

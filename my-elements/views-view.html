@@ -1,0 +1,33 @@
+<link rel="import" href="polymer.html">
+<link rel="import" href="polymer-helper.html">
+
+<dom-module id="views-view">
+<template>
+    <div>
+        <h1>[[ title ]]</h1>
+        <content select="data-header"></content>
+        <content select="data-exposed"></content>
+        <content select="data-attachment-before"></content>
+        <content select="data-rows"></content>
+        <content select="data-empty"></content>
+        <content select="data-pager"></content>
+        <content select="data-attachment-after"></content>
+        <content select="data-more"></content>
+        <content select="data-footer"></content>
+        <content select="data-feed-icons"></content>
+    </div>
+
+</template>
+<script>
+  Polymer({
+    is: 'views-view',
+    properties: {
+        wrapperAttributes: Object,
+        title: String,
+    },
+    ready: function() {
+        PolymerHelper.attachAttributes(this.$$('div'), this.wrapperAttributes);
+    }
+  });
+</script>
+</dom-module>

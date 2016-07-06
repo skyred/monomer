@@ -26,6 +26,11 @@
    <content select="data-author-picture">
    ```
 
+## (Dev) Conventions
+
+- HTML blocs are passed in via LightDOM. (use <content> to form Composed DOM).
+- Structured data (array / object / simple string such as url) are passed in via properties.
+
 ## (Dev) Boolean variable conversion pattern
 Twig variable:
 ```
