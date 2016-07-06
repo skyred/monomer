@@ -1,8 +1,10 @@
-<link rel="import" href="polymer.html">
+<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="paper-button/paper-button.html">
 
 <dom-module id="pager-item">
     <template>
-        <a href$="[[ url ]]" title="[[ title ]]">[[ text ]]</a>
+        <a href$="[[ url ]]" title="[[ title ]]"><paper-button raised>[[ text ]]</paper-button></a>
+
     </template>
     <script>
         Polymer({
