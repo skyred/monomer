@@ -1,16 +1,47 @@
 <link rel="import" href="polymer/polymer.html">
-<dom-module id="breadcrumb">
 
-<template>
+<!--
+/**
+ * @file
+ * Polymer element for a breadcrumb trail.
+ *
+ * Properties:
+ * - heading: [String]
+ * - breadcrumb: [Array] The breadcrumb trail items. Each item is an object
+ *   containing:
+ *   - text: [String] Text of the item.
+ *   - url: [String] URL of the item (optional).
+ */
+-->
+<dom-module id="x-breadcrumb">
 
-</template>
+  <template>
+    <style>
+
+    </style>
+
+    <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+      <h2 id="system-breadcrumb" class="visually-hidden">{{ heading }}</h2>
+      <ol>
+        <template is="dom-repeat" items="{{breadcrumb}}">
+          <li>
+            <template is="dom-if" if="{{item.url}}">
+              <a href$="{{ item.url }}">{{ item.text }}</a>
+            </template>
+            <template is="dom-if" if="{{!item.url}}">
+              {{ item.text }}
+            </template>
+          </li>
+        </template>
+      </ol>
+    </nav>
+  </template>
 
   <script>
     Polymer({
-      is: 'breadcrumb',
+      is: 'x-breadcrumb',
       properties: {
-        customType: String,
-        messages: Array,
+        breadcrumb: Array,
         heading: String,
       },
       isError: function(type) {
