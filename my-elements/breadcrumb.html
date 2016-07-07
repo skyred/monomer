@@ -1,0 +1,25 @@
+<link rel="import" href="polymer/polymer.html">
+<dom-module id="breadcrumb">
+
+<template>
+
+</template>
+
+  <script>
+    Polymer({
+      is: 'breadcrumb',
+      properties: {
+        customType: String,
+        messages: Array,
+        heading: String,
+      },
+      isError: function(type) {
+        return type == 'error';
+      },
+      calculateClass: function() {
+        return 'messages' + '--' + this.type;
+      }
+    });
+  </script>
+
+</dom-module>

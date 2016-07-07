@@ -3,25 +3,25 @@
 <link rel="import" href="echo-html.html">
 
 <dom-module id="pager-item">
-    <template>
-        <style>
-            :host {
-                font-size: 18px;
-            }
-            a {
-                text-decoration: none;
-                color: black;
-            }
-            :host([is-current]) a {
-                font-weight: bold;
-            }
-            a:hover {
-                color:black;
-            }
-        </style>
-        <a href$="[[ url ]]" title="[[ title ]]" class$=""><paper-button raised>[[ text ]]</paper-button></a>
+<template>
+    <style>
+        :host {
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        :host([is-current]) a {
+            font-weight: bold;
+        }
+        a:hover {
+            color:black;
+        }
+    </style>
+    <a href$="[[ url ]]" title="[[ title ]]" class$=""><paper-button raised>[[ text ]]</paper-button></a>
 
-    </template>
+</template>
     <script>
         Polymer({
             is: 'pager-item',

@@ -1,8 +1,14 @@
 <script>
 (function(){
   "use strict";
+
+  /**
+   * Attach attributes to a DOM element.
+   * @param target
+   * @param attributes
+   */
   function attachAttributes(target, attributes) {
-    //a.log(target,attributes);
+
     var keys = Object.keys(attributes);
     for (var i = 0; i < keys.length; ++i) {
       var value = attributes[keys[i]];
