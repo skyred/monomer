@@ -14,12 +14,11 @@
 {% polymer import "mm-tabs/mm-tabs.html" %}
 {% if primary %}
   <mm-tabs heading="{{ 'Primary tabs'|t }}"
-          wrapper-class="tabs--primary"
-          tabs="{{ primary | json_encode | e('html_attr') }}"></mm-tabs>
+           wrapper-class="tabs--primary"
+           tabs="{{ primary | json_encode | e('html_attr') }}"></mm-tabs>
 {% endif %}
 {% if secondary %}
   <mm-tabs heading="{{ 'Secondary tabs'|t }}"
-          wrapper-class="tabs--secondary"
-          tabs="{{ secondary | json_encode | e('html_attr') }}"></mm-tabs>
-
+           wrapper-class="tabs--secondary"
+           tabs="{{ secondary | json_encode | e('html_attr') }}"></mm-tabs>
 {% endif %}

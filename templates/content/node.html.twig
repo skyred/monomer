@@ -72,9 +72,8 @@
 #}
 {{ attach_library('twig_polymer/webcomponents-lite') }}
   {% polymer import "mm-node/mm-node-full.html" %}
-  <mm-node-full
+  <mm-node-full{{ attributes.addClass(classes) }}
           author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
-          author-name="{{ render_var(author_name) |e('html_attr')}}"
           attributes="{{ attributes.toArray()|json_encode|e('html_attr') }}"
           url="{{ url| e('html_attr') }}"
           {% if not page %}
@@ -85,11 +84,10 @@
           {% if display_submitted %}
           display-submitted="true"
           {% endif %}
-          content-attributes="{{ content_attributes.toArray()|json_encode|e('html_attr') }}"
-          fields="{{ node.getFields() |json_encode|e('html_attr') }}">
-    <data-label>
+          content-attributes="{{ content_attributes.toArray()|json_encode|e('html_attr') }}">
+    <mm-node-heading>
       {{ label }}
-    </data-label>
+    </mm-node-heading>
     <data-date>
       {{ date }}
     </data-date>
@@ -99,7 +97,7 @@
     <data-author-name>
       {{ author_name }}
     </data-author-name>
-    <data-main-content>
+    <mm-node-content{{ content_attributes.addClass('node__content') }}>
       {{ content }}
-    </data-main-content>
+    </mm-node-content>
   </mm-node-full>

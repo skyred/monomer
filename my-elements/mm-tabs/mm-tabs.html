@@ -1,4 +1,4 @@
-<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
 <link rel="import" href="mm-tabs-styles.html">
 
@@ -26,9 +26,9 @@
     </template>
     <ul class$="tabs clearfix {{wrapperClass}}">
       <template is="dom-repeat" items="{{tabs}}">
-        <li class="tabs__tab {{ _activeClass(item) }}">
-          <a href="{{ item.url }}" class="tabs__tab-link {{ _activeClass(item) }}">
-            {{ tab.text }}
+        <li class$="tabs__tab {{ _activeClass(item) }}">
+          <a href$="{{ item.url }}" class$="tabs__tab-link {{ _activeClass(item) }}">
+            {{ item.text }}
           </a>
         </li>
       </template>

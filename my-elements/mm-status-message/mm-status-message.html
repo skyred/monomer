@@ -1,69 +1,74 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
 <link rel="import" href="mm-status-message-styles.html">
+<link rel="import" href="../echo-html.html">
+
 <!--
  /**
   * @file
   * Polymer element for status message.
   *
   * Properties:
-  * - customType: [String] type of message ('error', 'warning', ...).
+  * - messageType: [String] type of message ('error', 'warning', ...).
   * - messages: [Array] each containing:
   *   - [String]
   * - heading: [String]
   */
 -->
-<dom-module id="status-message">
+<dom-module id="mm-status-message">
 
-<template>
-  <style include="mm-shared-styles-common"></style>
-  <style include="mm-status-message-styles"></style>
+  <template>
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-status-message-styles"></style>
 
-  <!-- alert -->
-  <template is="dom-if" if="{{ _isError(type)}}">
-    <div role="contentinfo" class$="{{ _calculateClass() }}">
-      <div role="alert">
-        <template is="dom-if" if="{{heading}}">
-        <h2 class="visually-hidden">{{ heading }}</h2>
-        </template>
-        <ul class="messages__list">
-          <template is="dom-repeat" items="{{messages}}">
-            <li class="messages__item">{{ item }}</li>
-          </template>
-        </ul>
-      </div>
-    </div>
-  </template>
-
-  <!-- Non-alert -->
-  <template is="dom-if" if="{{! _isError(type)}}">
-    <div role="contentinfo" class$="{{ _calculateClass() }}">
-        <template is="dom-if" if="{{ heading }}">
+    <!-- alert -->
+    <template is="dom-if" if="{{ _isError(messageType) }}">
+      <div role="contentinfo" class$="{{ _calculateClass() }}">
+        <div role="alert">
+          <template is="dom-if" if="{{heading}}">
           <h2 class="visually-hidden">{{ heading }}</h2>
-        </template>
-        <ul class="messages__list">
-          <template is="dom-repeat" items="{{ messages }}">
-            <li class="messages__item">{{ item }}</li>
           </template>
-        </ul>
-    </div>
-  </template>
+          <ul class="messages__list">
+            <template is="dom-repeat" items="{{messages}}">
+              <li class="messages__item"><echo-html html="{{ item }}"></echo-html></li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </template>
 
-</template>
+    <!-- Non-alert -->
+    <template is="dom-if" if="{{ !_isError(messageType) }}">
+      <div role="contentinfo" class$="{{ _calculateClass() }}">
+          <template is="dom-if" if="{{ heading }}">
+            <h2 class="visually-hidden">{{ heading }}</h2>
+          </template>
+          <ul class="messages__list">
+            <template is="dom-repeat" items="{{ messages }}">
+              <li class="messages__item"><echo-html html="{{ item }}"></echo-html></li>
+            </template>
+          </ul>
+      </div>
+    </template>
+
+  </template>
 
   <script>
     Polymer({
-      is: 'status-message',
+      is: 'mm-status-message',
       properties: {
-        customType: String,
+        messageType: String,
         messages: Array,
         heading: String,
       },
-      isError: function(type) {
+      _isError: function(type) {
         return type == 'error';
       },
-      calculateClass: function() {
+      _calculateClass: function() {
         return 'messages' + '--' + this.type;
+      },
+      ready: function(){
+        //console.log(this.messages);
       }
     });
   </script>

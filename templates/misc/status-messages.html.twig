@@ -33,7 +33,7 @@
   %}
 
   <mm-status-message aria-label="{{ status_headings[type] | e('html_attr') }}"
-                  custom-type="{{ type | e('html_attr') }}"
+                  message-type="{{ type | e('html_attr') }}"
                   messages="{{ messages | json_encode | e('html_attr') }}"
                   heading="{{ status_headings[type] | e('html_attr') }}"
                   {{ attributes.addClass(classes)|without('role', 'aria-label') }}>

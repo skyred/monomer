@@ -17,11 +17,11 @@
  * - created: [String]
  *
  * DOM children:
- * - <data-label>: heading.
+ * - <mm-node-heading>: heading.
  * - <data-author-picture>
  * - <data-author-name>
  * - <data-date>
- * - <data-main-content>
+ * - <mm-node-content>
  */
 -->
 <dom-module id="mm-node-full">
@@ -32,7 +32,7 @@
      <echo-html html$="[[ titlePrefix ]]"></echo-html>
         <template is="dom-if" if="{{ showTitle }}">
         <h2 [[ titleAttributes ]]>
-            <a href="[[ url ]]" rel="bookmark"><content select="data-label"></content></a>
+            <a href="[[ url ]]" rel="bookmark"><content select="mm-node-heading"></content></a>
         </h2>
         </template>
         <echo-html html$="[[ titleSuffix ]]"></echo-html>
@@ -48,13 +48,10 @@
     </template>
 
     <div class="content">
-
+      <content select="mm-node-content"></content>
     </div>
-        <paper-card heading="[[title]]">
-            <div class="card-content">
-                <content select="data-main-content"></content>
-            </div>
-        </paper-card>
+
+
   </article>
 </template>
 <script>
