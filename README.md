@@ -16,18 +16,26 @@ According to latest spec, `<content>` element is [being deprecated](https://deve
 For the time being we will use `<content>` but need to watch closely at updates in Polymer.
 
 ## Porting progress
- - pager.html.twig
- - breadcrumb.html.twig
- - node.html.twig
- - status-messages.html.twig
- - views-view.html.twig
+
 
 ## Reusable Components
- - Grids
-   - grid-row
-   - grid-column
-   - grid-cell
- - Tabs
+_(Prefix `mm-` stands for `Monomer`.)_
+
+ - grid
+   - mm-grid-row
+   - mm-grid-column
+   - mm-grid-item
+ - mm-tabs
+ - mm-node
+   - mm-node-full
+ - mm-pager
+   - mm-pager-item
+ - views
+   - mm-views-wrapper
+   - mm-views-exposed-filters
+ - mm-region
+ - mm-breadcrumb
+ - mm-status-message
 
 ## Simplified Variables
 Drupal Twig templates has a lot of obscure and cumbersome variables such as `attributes`, `title_prefix`.
