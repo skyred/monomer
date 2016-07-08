@@ -1,0 +1,23 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+/**
+ * @file
+ * Common styles for <mm-pager-item> elements.
+ */
+-->
+<dom-module id="mm-pager-item-styles">
+  <template>
+    <style>
+      :host {
+        display: inline;
+        padding: 0.5em;
+      }
+      :host-context([is-current]){
+        font-weight: bold;
+      }
+      :host-context([ellipse]) {
+
+      }
+    </style>
+  </template>
+</dom-module>

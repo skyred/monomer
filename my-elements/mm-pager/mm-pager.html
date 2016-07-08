@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-pager-styles.html.html">
 <link rel="import" href="mm-pager-item.html">
 
 <!--
@@ -21,19 +22,16 @@
  *    }
  *
  * DOM children:
- * - all
+ * - <mm-pager-item>
  */
 -->
 <dom-module id="mm-pager">
   <template>
     <style include="mm-shared-styles-common"></style>
-    <style>
-      :host {
-        display: block;
-        /*border: 1px solid red;*/
-      }
-    </style>
-    <content></content>
+    <style include="mm-shared-pager-styles"></style>
+    <div class="pager-items">
+      <content select="mm-pager-item"></content>
+    </div>
   </template>
   <script>
     Polymer({
@@ -42,7 +40,6 @@
         items: Object,
       },
       ready: function () {
-        //console.log('a', this.items);
       }
     });
   </script>
