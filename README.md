@@ -77,5 +77,12 @@ However, this could also mean less ability for customization.
 
 To access more raw variables in the original Twig template (which are often big HTML blocs), override the respective Twig template in your sub-theme.
 
+
+## Reusable Components
+ - Grids
+   - grid-row
+   - grid-column
+   - grid-cell
+ - Tabs
 ## Creating a sub-theme
  - Coming soon

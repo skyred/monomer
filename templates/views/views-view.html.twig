@@ -35,16 +35,16 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-{% polymer import "views-view.html" %}
+{% polymer import "views/views-view.html" %}
 <views-view title="{{ title| e('html_attr') }}"
             wrapper-attributes="{{ attributes.addClass(classes).toArray()|json_encode|e('html_attr') }}">
-    <data-header>
-      {% if header %}
-      <header>
-        {{ header }}
-      </header>
-      {% endif %}
-    </data-header>
+  <data-header>
+    {% if header %}
+    <header>
+      {{ header }}
+    </header>
+    {% endif %}
+  </data-header>
 
   <data-exposed>
     {{ exposed }}
@@ -72,16 +72,15 @@
 
 
 
-    <data-footer>
-      {% if footer %}
-      <footer>
-        {{ footer }}
-      </footer>
-      {% endif %}
-    </data-footer>
+  <data-footer>
+    {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+    {% endif %}
+  </data-footer>
 
   <data-feed-icons>
     {{ feed_icons }}
   </data-feed-icons>
-{{ view | json_encode | raw }}
 </views-view>
