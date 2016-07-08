@@ -9,6 +9,10 @@
 ## Development guides
 [Development](docs/dev.md)
 
+## Warning
+According to latest spec, `<content>` element is [being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content) in favor of `<slot>`. However, Polymer still uses `<content>` and there is no clear documentation about `<slot>`.
+For the time being we will use `<content>` but need to watch closely at updates in Polymer.
+
 ## Porting progress
  - pager.html.twig
  - breadcrumb.html.twig

@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-grid-styles.html">
 <link rel="import" href="../polymer-helper.html">
 <link rel="import" href="../echo-html.html">
 <!--
@@ -13,12 +14,8 @@
 -->
 <dom-module id="mm-grid-item">
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-      /* Add your styles here. */
-    </style>
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-grid-styles"></style>
     <content></content>
   </template>
 <script>

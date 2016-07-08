@@ -1,27 +1,27 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
-<link rel="import" href="mm-grid-styles.html">
 <link rel="import" href="../polymer-helper.html">
 <link rel="import" href="../echo-html.html">
+<link rel="import" href="mm-page-title-styles.html">
+
 <!--
 /**
  * @file
- * Polymer element for wrapping a small chunk of content with title.
+ * Polymer element for wrapping Views exposed filters.
  *
  * DOM children:
- *  - <data-heading>: heading.
- *  - <data-content>: content.
+ *  - all.
  */
 -->
-<dom-module id="mm-grid-row">
+<dom-module id="mm-views-exposed-filters">
   <template>
     <style include="mm-shared-styles-common"></style>
-    <style include="mm-grid-styles"></style>
-    <content select="mm-grid-item"></content>
+    <style include="mm-views-exposed-filters-styles"></style>
+    <content></content>
   </template>
 <script>
   Polymer({
-    is: 'mm-grid-row',
+    is: 'mm-views-exposed-filters',
     properties: {
 
     },

@@ -1,0 +1,55 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+/**
+ * @file
+ * Common styles for all mm Polymer elements.
+ */
+-->
+<dom-module id="mm-views-exposed-filters-styles">
+  <template>
+    <style>
+      :host::content .exposed-filters .filters {
+        float: left; /* LTR */
+        margin-right: 1em; /* LTR */
+      }
+      :host::content[dir="rtl"] .exposed-filters .filters {
+        float: right;
+        margin-left: 1em;
+        margin-right: 0;
+      }
+      :host::content .exposed-filters .form-item {
+        margin: 0 0 0.1em 0;
+        padding: 0;
+      }
+      :host::content .exposed-filters .form-item label {
+        float: left; /* LTR */
+        font-weight: normal;
+        width: 10em;
+      }
+      [dir="rtl"] :host::content .exposed-filters .form-item label {
+        float: right;
+      }
+      :host::content .exposed-filters .form-select {
+        width: 14em;
+      }
+      /* Current filters */
+      :host::content .exposed-filters .current-filters {
+        margin-bottom: 1em;
+      }
+      :host::content .exposed-filters .current-filters .placeholder {
+        font-style: normal;
+        font-weight: bold;
+      }
+      :host::content .exposed-filters .additional-filters {
+        float: left; /* LTR */
+        margin-right: 1em; /* LTR */
+      }
+      [dir="rtl"] :host::content .exposed-filters .additional-filters {
+        float: right;
+        margin-left: 1em;
+        margin-right: 0;
+      }
+
+    </style>
+  </template>
+</dom-module>
