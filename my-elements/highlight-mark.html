@@ -1,0 +1,37 @@
+<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="polymer-helper.html">
+<link rel="import" href="echo-html.html">
+<!--
+/**
+ * @file
+ * Polymer element for a marker.
+ *
+ * Properties:
+ * - wrapperClass: [String]
+ *
+ * DOM children:
+ * - all
+ */
+-->
+<dom-module id="highlight-mark">
+  <template>
+    <style>
+      /* Add your styles here. */
+      :host {
+      }
+    </style>
+    <mark class$="highlight-mark {{ wrapperClass }}">
+      <content></content>
+    </mark>
+  </template>
+<script>
+  Polymer({
+    is: 'highlight-mark',
+    properties: {
+      wrapperClass: String,
+    },
+    ready: function () {
+    }
+  });
+</script>
+</dom-module>

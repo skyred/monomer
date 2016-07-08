@@ -1,0 +1,83 @@
+<link rel="import" href="polymer/polymer.html">
+
+<!--
+/**
+ * @file
+ * Polymer element for tabs.
+ *
+ * Properties:
+ * - heading: [String] Accessible heading.
+ * - wrapperClass: [String]
+ * - tabs: [Array] each containing:
+ *   - active: [Boolean]
+ *   - text: [String]
+ *   - url: [String]
+ *
+ */
+-->
+<dom-module id="x-tabs">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      div.tabs {
+        margin: 1em 0;
+      }
+      ul.tabs {
+        list-style: none;
+        margin: 0 0 0.5em;
+        padding: 0;
+      }
+      .tabs > li {
+        display: inline-block;
+        margin-right: 0.3em; /* LTR */
+      }
+      [dir="rtl"] .tabs > li {
+        margin-left: 0.3em;
+        margin-right: 0;
+      }
+      .tabs a {
+        display: block;
+        padding: 0.2em 1em;
+        text-decoration: none;
+      }
+      .tabs a.is-active {
+        background-color: #eee;
+      }
+      .tabs a:focus,
+      .tabs a:hover {
+        background-color: #f5f5f5;
+      }
+
+    </style>
+    <template is="dom-if" if="{{ heading }}">
+      <h2 class="visually-hidden">{{ heading }}</h2>
+    </template>
+    <ul class$="tabs clearfix {{wrapperClass}}">
+      <template is="dom-repeat" items="{{tabs}}">
+        <li class="tabs__tab {{ activeClass(item) }}">
+          <a href="{{ item.url }}" class="tabs__tab-link {{ activeClass(item) }}">
+            {{ tab.text }}
+          </a>
+        </li>
+      </template>
+    </ul>
+  </template>
+  <script>
+    Polymer({
+      is: 'x-tabs',
+      properties: {
+        heading: String,
+        wrapperClass: String,
+        tabs: Array,
+      },
+      ready: function () {
+        //console.log('a', this.items);
+      },
+      activeClass: function (item) {
+        return item.active ? 'is-active' : '';
+      },
+    });
+  </script>
+</dom-module>

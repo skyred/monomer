@@ -1,0 +1,33 @@
+<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="polymer-helper.html">
+<link rel="import" href="echo-html.html">
+<!--
+/**
+ * @file
+ * Polymer element for wrapping a footer.
+ *
+ * DOM children:
+ * - all
+ */
+-->
+<dom-module id="x-footer">
+  <template>
+    <style>
+      /* Add your styles here. */
+      :host {
+        display: block;
+      }
+    </style>
+    <content></content>
+  </template>
+<script>
+  Polymer({
+    is: 'x-footer',
+    properties: {
+      wrapperClass: String,
+    },
+    ready: function () {
+    }
+  });
+</script>
+</dom-module>
