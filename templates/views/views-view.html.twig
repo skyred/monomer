@@ -37,8 +37,9 @@
 %}
 {% polymer import "mm-views/mm-views-wrapper.html" %}
 {% polymer import "mm-views/mm-views-exposed-filters.html" %}
-<mm-views-wrappers title="{{ title| e('html_attr') }}"
-            wrapper-attributes="{{ attributes.addClass(classes).toArray()|json_encode|e('html_attr') }}">
+<mm-views-wrappers{{ attributes }}
+        title="{{ title| e('html_attr') }}"
+        wrapper-attributes="{{ attributes.addClass(classes).toArray()|json_encode|e('html_attr') }}">
     {% if header %}
     <header>
       {{ header }}
@@ -68,8 +69,6 @@
   <data-more>
     {{ more }}
   </data-more>
-
-
 
   <data-footer>
     {% if footer %}

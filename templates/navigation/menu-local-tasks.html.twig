@@ -11,15 +11,15 @@
 * themed in menu-local-task.html.twig.
 */
 #}
-{% polymer import "x-tabs.html" %}
+{% polymer import "mm-tabs/mm-tabs.html" %}
 {% if primary %}
-  <x-tabs heading="{{ 'Primary tabs'|t }}"
+  <mm-tabs heading="{{ 'Primary tabs'|t }}"
           wrapper-class="tabs--primary"
-          tabs="{{ primary | json_encode | e('html_attr') }}"></x-tabs>
+          tabs="{{ primary | json_encode | e('html_attr') }}"></mm-tabs>
 {% endif %}
 {% if secondary %}
-  <x-tabs heading="{{ 'Secondary tabs'|t }}"
+  <mm-tabs heading="{{ 'Secondary tabs'|t }}"
           wrapper-class="tabs--secondary"
-          tabs="{{ secondary | json_encode | e('html_attr') }}"></x-tabs>
+          tabs="{{ secondary | json_encode | e('html_attr') }}"></mm-tabs>
 
 {% endif %}

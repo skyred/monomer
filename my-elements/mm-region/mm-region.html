@@ -1,0 +1,33 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-helper.html">
+<link rel="import" href="../echo-html.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-region-styles.html">
+
+
+<!--
+/**
+ * @file
+ * Polymer element for wrapping a region.
+ *
+ * DOM children:
+ * - all
+ */
+-->
+<dom-module id="mm-region">
+  <template>
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-region-styles"></style>
+    <content></content>
+  </template>
+<script>
+  Polymer({
+    is: 'mm-region',
+    properties: {
+
+    },
+    ready: function () {
+    }
+  });
+</script>
+</dom-module>

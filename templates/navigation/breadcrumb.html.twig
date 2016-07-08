@@ -8,11 +8,11 @@
  */
 #}
 {% if breadcrumb %}
-  {% polymer import "x-breadcrumb.html" %}
-  <x-breadcrumb breadcrumb="{{ breadcrumb | json_encode | e('html_attr') }}"
+  {% polymer import "mm-breadcrumb/mm-breadcrumb.html" %}
+  <mm-breadcrumb breadcrumb="{{ breadcrumb | json_encode | e('html_attr') }}"
                 aria-labelledby="system-breadcrumb"
                 role="navigation"
                 class="breadcrumb"
                 heading="{{'Breadcrumb'|t| e('html_attr')}}">
-  </x-breadcrumb>
+  </mm-breadcrumb>
 {% endif %}

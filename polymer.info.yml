@@ -1,6 +1,6 @@
-name: Polymer
+name: Monomer
 type: theme
-description: Polymer base theme
+description: Monomer (a base theme using Polymer components). Requires twig_polymer module.
 core: 8.x
 base theme: classy
 regions:

@@ -29,7 +29,7 @@
  * @ingroup themeable
  */
 #}
-{% polymer import "simple-wrapper.html" %}
+{% polymer import "mm-simple-wrapper.html" %}
 {%
   set classes = [
     'block',
@@ -37,7 +37,7 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<simple-wrapper classes="{{ classes }}" {{ attributes }}>
+<mm-simple-wrapper classes="{{ classes }}" {{ attributes }}>
   <data-heading>
     {% block heading %}
       {{ title_prefix }}
@@ -54,4 +54,4 @@
       </div>
     {% endblock %}
   </data-content>
-</simple-wrapper>
+</mm-simple-wrapper>

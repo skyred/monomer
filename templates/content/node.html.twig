@@ -71,7 +71,7 @@
  */
 #}
 {{ attach_library('twig_polymer/webcomponents-lite') }}
-  {% polymer import "mm-node-full.html" %}
+  {% polymer import "mm-node/mm-node-full.html" %}
   <mm-node-full
           author-attributes="{{ author_attributes.toArray()|json_encode|e('html_attr') }}"
           author-name="{{ render_var(author_name) |e('html_attr')}}"
