@@ -6,6 +6,8 @@
   - Download this theme.
   - Run `bower install` in the downloaded theme.
 
+## [Demo](https://github.com/ztl8702/polydemo/tree/polymer)
+
 ## Development guides
 [Development](docs/dev.md)
 
