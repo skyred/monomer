@@ -1,8 +1,9 @@
-<link rel="import" href="polymer/polymer.html">
-<link rel="import" href="paper-button/paper-button.html">
-<link rel="import" href="echo-html.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
 
-<dom-module id="pager-item">
+<link rel="import" href="../echo-html.html">
+
+<dom-module id="mm-pager-item">
 <template>
     <style>
         :host {
@@ -24,7 +25,7 @@
 </template>
     <script>
         Polymer({
-            is: 'pager-item',
+            is: 'mm-pager-item',
             properties: {
                 url: String,
                 title: String,

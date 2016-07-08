@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
 <link rel="import" href="../polymer-helper.html">
 <link rel="import" href="../echo-html.html">
 <!--
@@ -7,10 +8,11 @@
  * Polymer element for wrapping a small chunk of content with title.
  *
  * DOM children:
- *  - all
+ *  - <data-heading>: heading.
+ *  - <data-content>: content.
  */
 -->
-<dom-module id="grid-cell">
+<dom-module id="mm-grid-row">
   <template>
     <style>
       :host {
@@ -22,7 +24,7 @@
   </template>
 <script>
   Polymer({
-    is: 'grid-cell',
+    is: 'grid-row',
     properties: {
 
     },

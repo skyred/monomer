@@ -30,16 +30,16 @@
  */
 #}
 {% if items %}
-  {% polymer import "pager.html" %}
-  {% polymer import "pager-item.html" %}
-  <x-pager items="{{ items |json_encode| e('html_attr') }}">
+  {% polymer import "mm-pager/mm-pager.html" %}
+
+  <mm-pager items="{{ items |json_encode| e('html_attr') }}">
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
-        <pager-item url="{{ items.first.href }}" text="{{ items.first.text|default('« First'|t)|e('html_attr') }}"></pager-item>
+        <mm-pager-item url="{{ items.first.href }}" text="{{ items.first.text|default('« First'|t)|e('html_attr') }}"></mm-pager-item>
       {% endif %}
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
-        <pager-item url="{{ items.previous.href }}" text="{{ items.previous.text|default('‹ Previous'|t)|e('html_attr') }}"></pager-item>
+        <mm-pager-item url="{{ items.previous.href }}" text="{{ items.previous.text|default('‹ Previous'|t)|e('html_attr') }}"></mm-pager-item>
       {% endif %}
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
@@ -52,24 +52,25 @@
         {% else %}
           {% set title = 'Go to page @key'|t({'@key': key}) %}
         {% endif %}
-        <pager-item url="{{ item.href }}"
+        <mm-pager-item url="{{ item.href }}"
                     title="{{ title }}"
                     {% if current == key %}
                     is-current="true"
                     {% endif %}
-                    text="{{- key|e('html_attr') -}}"></pager-item>
+                    text="{{- key|e('html_attr') -}}"></mm-pager-item>
       {% endfor %}
       {# Add an ellipsis if there are further next pages. #}
       {% if ellipses.next %}
         <li class="pager-ellipsis">&hellip;</li>
+        <mm-papger-item ellipsis></mm-papger-item>
       {% endif %}
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
-        <pager-item url="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" text="{{ items.next.text|default('Next ›'|t)|e('html_attr') }}"></pager-item>
+        <mm-pager-item url="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" text="{{ items.next.text|default('Next ›'|t)|e('html_attr') }}"></mm-pager-item>
       {% endif %}
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
-        <pager-item url="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" text="{{ items.last.text|default('Last »'|t)|e('html_attr') }}"></pager-item>
+        <mm-pager-item url="{{ items.last.href }}" title="{{ 'Go to last page'|t }}" text="{{ items.last.text|default('Last »'|t)|e('html_attr') }}"></mm-pager-item>
       {% endif %}
-  </x-pager>
+  </mm-pager>
 {% endif %}

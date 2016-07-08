@@ -22,7 +22,7 @@
  */
 #}
 
-{% polymer import "status-message.html" %}
+{% polymer import "mm-status-message.html" %}
 
 {% for type, messages in message_list %}
   {%
@@ -32,12 +32,12 @@
     ]
   %}
 
-  <status-message aria-label="{{ status_headings[type] | e('html_attr') }}"
+  <mm-status-message aria-label="{{ status_headings[type] | e('html_attr') }}"
                   custom-type="{{ type | e('html_attr') }}"
                   messages="{{ messages | json_encode | e('html_attr') }}"
                   heading="{{ status_headings[type] | e('html_attr') }}"
                   {{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-  </status-message>
+  </mm-status-message>
   {# Remove type specific classes. #}
   {{ attributes.removeClass(classes) }}
 {% endfor %}

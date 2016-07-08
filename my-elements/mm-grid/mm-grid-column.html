@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="../polymer-helper.html">
+<link rel="import" href="../echo-html.html">
+<!--
+/**
+ * @file
+ * Polymer element for wrapping a small chunk of content with title.
+ *
+ * DOM children:
+ *  - <data-heading>: heading.
+ *  - <data-content>: content.
+ */
+-->
+<dom-module id="mm-grid-column">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      /* Add your styles here. */
+    </style>
+    <content></content>
+  </template>
+<script>
+  Polymer({
+    is: 'mm-grid-column',
+    properties: {
+
+    },
+    ready: function () {
+        //PolymerHelper.attachAttributes(this.$$('h2'), this.headingAttributes);
+    }
+  });
+</script>
+</dom-module>

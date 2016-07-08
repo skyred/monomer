@@ -1,11 +1,12 @@
-<link rel="import" href="polymer/polymer.html">
-<link rel="import" href="paper-card/paper-card.html">
-<link rel="import" href="polymer-helper.html">
-<link rel="import" href="echo-html.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-node-styles.html">
+<link rel="import" href="../polymer-helper.html">
+<link rel="import" href="../echo-html.html">
 <!--
 /**
  * @file
- * Component for node
+ * Component for node.
  *
  * Properties:
  * - wrapperClass: [String]
@@ -23,11 +24,12 @@
  * - <data-main-content>
  */
 -->
-<dom-module id="node-full">
+<dom-module id="mm-node-full">
 <template>
-    <article>
-
-        <echo-html html$="[[ titlePrefix ]]"></echo-html>
+  <style include="mm-shared-styles-common"></style>
+  <style include="mm-node-styles"></style>
+  <article>
+     <echo-html html$="[[ titlePrefix ]]"></echo-html>
         <template is="dom-if" if="{{ showTitle }}">
         <h2 [[ titleAttributes ]]>
             <a href="[[ url ]]" rel="bookmark"><content select="data-label"></content></a>
@@ -53,11 +55,11 @@
                 <content select="data-main-content"></content>
             </div>
         </paper-card>
-    </article>
+  </article>
 </template>
 <script>
   Polymer({
-    is: 'node-full',
+    is: 'mm-node-full',
     properties: {
         url: String,
         authorAttributes: Object,

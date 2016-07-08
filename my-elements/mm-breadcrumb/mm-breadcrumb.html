@@ -1,5 +1,6 @@
-<link rel="import" href="polymer/polymer.html">
-
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-breadcrumb-styles.html">
 <!--
 /**
  * @file
@@ -13,17 +14,14 @@
  *   - url: [String] URL of the item (optional).
  */
 -->
-<dom-module id="x-breadcrumb">
-
+<dom-module id="mm-breadcrumb">
   <template>
-    <style>
-
-    </style>
-
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-breadcrumb-styles"></style>
     <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
       <h2 id="system-breadcrumb" class="visually-hidden">{{ heading }}</h2>
       <ol>
-        <template is="dom-repeat" items="{{breadcrumb}}">
+        <template is="dom-repeat" items="{{ breadcrumb }}">
           <li>
             <template is="dom-if" if="{{item.url}}">
               <a href$="{{ item.url }}">{{ item.text }}</a>
@@ -36,21 +34,19 @@
       </ol>
     </nav>
   </template>
-
   <script>
     Polymer({
-      is: 'x-breadcrumb',
+      is: 'mm-breadcrumb',
       properties: {
         breadcrumb: Array,
         heading: String,
       },
-      isError: function(type) {
+      _isError: function(type) {
         return type == 'error';
       },
-      calculateClass: function() {
+      _calculateClass: function() {
         return 'messages' + '--' + this.type;
       }
     });
   </script>
-
 </dom-module>
