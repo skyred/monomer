@@ -11,14 +11,25 @@
 * themed in menu-local-task.html.twig.
 */
 #}
+
+{% macro tabs(heading, wrapper_class, items) %}
+  <mm-tabs heading="{{ heading|t }}"
+         wrapper-class="{{ wrapper_class | e('html_attr') }}">
+  {% for item in items %}
+    <mm-tab {% if item.active %}
+             active="true"
+            {% endif %}
+            url="{{ item.url }}"
+            text="{{ item.text }}">
+    </mm-tab>
+  {% endfor %}
+  </mm-tabs>
+{% endmacro %}
+macro
 {% polymer import "mm-tabs/mm-tabs.html" %}
 {% if primary %}
-  <mm-tabs heading="{{ 'Primary tabs'|t }}"
-           wrapper-class="tabs--primary"
-           tabs="{{ primary | json_encode | e('html_attr') }}"></mm-tabs>
+  {{ _self.tabs('Primary tabs', "tabs--primary", primary) }}
 {% endif %}
 {% if secondary %}
-  <mm-tabs heading="{{ 'Secondary tabs'|t }}"
-           wrapper-class="tabs--secondary"
-           tabs="{{ secondary | json_encode | e('html_attr') }}"></mm-tabs>
+  {{ _self.tabs('Secondary tabs', "tabs--secondary", secondary) }}
 {% endif %}

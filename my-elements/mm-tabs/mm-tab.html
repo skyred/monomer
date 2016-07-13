@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-tab-styles.html">
+
+<!--
+/**
+ * @file
+ * Polymer element for tab.
+ *
+ * Properties:
+ * - url: [String]
+ *
+ * DOM children:
+ * - *
+ */
+-->
+<dom-module id="mm-tab">
+  <template>
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-tab-styles"></style>
+    <a href$="{{ url }}" class$="tabs__tab-link {{ _activeClass(item) }}">
+      {{ text }}
+    </a>
+  </template>
+  <script>
+    Polymer({
+      is: 'mm-tab',
+      properties: {
+        url: String,
+        text: String,
+      },
+      ready: function () {
+      },
+    });
+  </script>
+</dom-module>

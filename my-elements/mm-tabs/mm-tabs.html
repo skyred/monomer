@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
 <link rel="import" href="mm-tabs-styles.html">
+<link rel="import" href="mm-tab.html">
 
 <!--
 /**
@@ -10,11 +11,9 @@
  * Properties:
  * - heading: [String] Accessible heading.
  * - wrapperClass: [String]
- * - tabs: [Array] each containing:
- *   - active: [Boolean]
- *   - text: [String]
- *   - url: [String]
  *
+ * DOM children:
+ * - *: all tabs.
  */
 -->
 <dom-module id="mm-tabs">
@@ -24,15 +23,9 @@
     <template is="dom-if" if="{{ heading }}">
       <h2 class="visually-hidden">{{ heading }}</h2>
     </template>
-    <ul class$="tabs clearfix {{wrapperClass}}">
-      <template is="dom-repeat" items="{{tabs}}">
-        <li class$="tabs__tab {{ _activeClass(item) }}">
-          <a href$="{{ item.url }}" class$="tabs__tab-link {{ _activeClass(item) }}">
-            {{ item.text }}
-          </a>
-        </li>
-      </template>
-    </ul>
+    <div id="tabs-wrapper" class$="tabs clearfix {{wrapperClass}}">
+      <content select="mm-tab"></content>
+    </div>
   </template>
   <script>
     Polymer({
@@ -40,10 +33,8 @@
       properties: {
         heading: String,
         wrapperClass: String,
-        tabs: Array,
       },
       ready: function () {
-        //console.log('a', this.items);
       },
       _activeClass: function (item) {
         return item.active ? 'is-active' : '';
