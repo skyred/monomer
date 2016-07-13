@@ -1,0 +1,46 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-helper.html">
+<link rel="import" href="../mm-shared-styles/mm-shared-styles-common.html">
+<link rel="import" href="mm-branding-styles.html">
+
+<!--
+/**
+ * @file
+ * Polymer element branding.
+ *
+ * DOM children:
+ * - <mm-branding-sitename>
+ * - <mm-branding-slogan>
+ */
+-->
+<dom-module id="mm-branding">
+  <template>
+    <style include="mm-shared-styles-common"></style>
+    <style include="mm-branding-styles"></style>
+    <content></content>
+    <aside class="branding">
+
+      <template is="dom-if" if="{{logoSrc}}">
+        <div class="branding__site-logo">
+          <a href$="{{ url }}" title="Home" rel="home">
+            <img src$="{{ logoSrc }}" alt="Home" />
+          </a>
+        </div>
+      </template>
+
+      <content select="mm-branding-sitename"></content>
+      <content select="mm-branding-slogan"></content>
+    </aside>
+  </template>
+<script>
+  Polymer({
+    is: 'mm-branding',
+    properties: {
+      logoSrc: String,
+      url: String,
+    },
+    ready: function () {
+    }
+  });
+</script>
+</dom-module>
