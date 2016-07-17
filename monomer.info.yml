@@ -14,5 +14,5 @@ regions:
   page_bottom: 'Page bottom'
   sidebar_first: 'First sidebar'
 libraries:
- - polymer/main
+ - monomer/main
  - twig_polymer/webcomponents-lite

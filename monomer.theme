@@ -5,7 +5,7 @@
  * Use preprocess hook to convert menu_local_task into variables needed by the
  * tabs component.
  */
-function polymer_preprocess_menu_local_tasks(&$variables) {
+function monomer_preprocess_menu_local_tasks(&$variables) {
   foreach (array('primary', 'secondary') as $type) {
     $tabs = array();
 

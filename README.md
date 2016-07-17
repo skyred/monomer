@@ -1,4 +1,4 @@
-# Polymer Base Theme for Drupal
+# Monomer (Polymer Base Theme for Drupal)
 
 `Polymer` namespace is already taken on d.o. New name candidate: `Monomer`.
 
