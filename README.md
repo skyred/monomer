@@ -3,6 +3,7 @@
 `Polymer` namespace is already taken on d.o. New name candidate: `Monomer`.
 
 ## Installation procedure
+  - Install [twig_polymer](https://github.com/ztl8702/twig_polymer/tree/dev).
   - Download this theme.
   - Run `bower install` in the downloaded theme.
 
@@ -14,9 +15,6 @@
 ## Warning
 According to latest spec, `<content>` element is [being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content) in favor of `<slot>`. However, Polymer still uses `<content>` and there is no clear documentation about `<slot>`.
 For the time being we will use `<content>` but need to watch closely at updates in Polymer.
-
-## Porting progress
-
 
 ## Reusable Components
 _(Prefix `mm-` stands for `Monomer`.)_
@@ -48,4 +46,4 @@ To access more raw variables in the original Twig template (which are often big 
 
 
 ## Tutorial: Creating a sub-theme
- - Coming soon
+ - See the [guide](docs/guide.md).
