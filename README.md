@@ -50,4 +50,4 @@ To access more raw variables in the original Twig template (which are often big 
 
 ## [Getting Started Guide](docs/guide.md)
 
-## [Tutorial: Building a simple studio site]()
+## [Tutorial: Building a simple studio site](docs/tutorial.md)
