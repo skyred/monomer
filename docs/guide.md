@@ -12,6 +12,12 @@
   
 Although in a web app, it is ideal to build blackbox elements; in designing a Drupal theme, it is more common that you would work with wrapper elements.
 
+## Installing dependencies via Bower
+
+```bash
+> bower install --save your-element
+```
+
 ## Creating Polymer element and using it in Twig templates
 `my-element/mm-region/mm-region.html`:
 ```html
@@ -141,7 +147,8 @@ styling inside an element.
 
  > Note: In native ShadowDOM ::content works. However, Polymer's ShadyDOM (polyfill implementation) requires that
   "you must have a selector to the left of the ::content pseudo-element".
-  A workaround is to multiple selectors:
+  
+ > For compatibility, a workaround is to multiple selectors:
    ```css
      :host::content #header,
      ::content #header {
