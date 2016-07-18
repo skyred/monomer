@@ -92,6 +92,8 @@ To simply code and to reuse styling, you may put CSS in a seperate element calle
 See also: [Shared style](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
 ### CSS selectors for Web Components
+There are some special selectors for styling Web Components and their children. These selectors are what allows us to encapsulate 
+styling inside an element.
 
  1. #### :host and :host-context
   `:host` refers to the element itself.
@@ -123,5 +125,30 @@ See also: [Shared style](https://www.polymer-project.org/1.0/docs/devguide/styli
   */
 ```  
  2. #### ::content
- 
+  Select LightDOM children of an element. Example:
+```css
+  ::content #header{
+    background: green;
+  }
+  
+  /**
+  This matches:
+  <mm-region>
+    <div id="header">Title</div> <!--Matched element-->
+  </mm-region>
+  **/
+```
+
+ > Note: In native ShadowDOM ::content works. However, Polymer's ShadyDOM (polyfill implementation) requires that
+  "you must have a selector to the left of the ::content pseudo-element".
+  A workaround is to multiple selectors:
+   ```css
+     :host::content #header,
+     ::content #header {
+       ...
+     }
+   ```
+ > See more at [Polymer Documentation](https://www.polymer-project.org/1.0/docs/devguide/styling#styling-distributed-children-content).
+
 See also: [ShadowDOM CSS cheat sheet](http://robdodson.me/shadow-dom-css-cheat-sheet/)
+
