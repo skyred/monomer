@@ -1,12 +1,12 @@
 # Guide to Building Drupal Themes with Web Components (Polymer based)
 
 ## Table of contents
- - Wrapper elements vs. Blackbox elements
- - Installing dependencies via Bower
- - Creating Polymer element and using it in Twig templates
- - CSS styling
-   - Style module
-   - CSS selectors for Web Components
+ - [Wrapper elements vs. Blackbox elements](#wrapper-elements-vs-blackbox-element)
+ - [Installing dependencies via Bower](#installing-dependencies-via-bower)
+ - [Creating Polymer element and using it in Twig templates](#creating-polymer-element-and-using-it-in-twig-templates)
+ - [CSS styling](#css-styling)
+   - [Style module](#style-module)
+   - [CSS selectors for Web Components](#css-selectors-for-web-components)
 
 ## Wrapper elements vs. Blackbox elements
 
