@@ -3,16 +3,17 @@
 Before reading this, make sure you have read [Getting Started Guide](guide.md).
 
 ## Table of contents
-- Goal
-- Setting up folder structure
-- Drupal Configuration
-- An anatomy of page layout
-- Step 1: set up basic page layout
-- Step 2: Auto-collapse header
-- Step 3: Main menu
-- Step 4: Front page view with animations
-- Step 5: Content pages
-- Step 6: fade-in effects on content pages
+- [Goal](#goal)
+- [Setting up folder structure](#setting-up-folder-structure)
+- [Drupal Configuration](#drupal-configuration)
+- [An anatomy of page layout](#an-anatomy-of-page-layout)
+- [Step 1: set up basic page layout](#step-1-set-up-basic-page-layout)
+- [Step 2: auto-collapse header](#step-2-auto-collapse-header)
+- [Step 3: main menu](#step-3-main-menu)
+- [Step 4: front page view with animations](#step-4-front-page-view-with-animations)
+- [Step 5: content pages](#step-5-content-pages)
+- [Step 6: fade-in effects on content pages](#step-6-fade-in-effects-on-content-pages)
+
 ## Goal
 We are building a website like this:
 
