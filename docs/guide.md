@@ -57,6 +57,7 @@ Although in a web app, it is ideal to build blackbox elements; in designing a Dr
 
   >  Note: always use relative URL like "../package-name/element-name.html" in your Polymer elements. Do NOT put "bower_components/" or "my-elements/" in the path.
 
+> Tip: If you have Drupal Console installed, you can use the command drupal polymer:element to generate the boilerplate code for your Polymer element.
 
 See also: [Element project layout](https://www.polymer-project.org/1.0/docs/tools/polymer-cli#element-project-layout) | [Local DOM](https://www.polymer-project.org/1.0/start/first-element/step-2) | [Lifecycle callbacks](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks)
 
