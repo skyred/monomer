@@ -12,4 +12,81 @@
   
 Although in a web app, it is ideal to build blackbox elements; in designing a Drupal theme, it is more common that you would work with wrapper elements.
 
+## Creating Polymer element and using it in Twig templates
+`my-element/mm-region/mm-region.html`:
+```html
+<link rel="import" href="../polymer/polymer.html">  <!-- Always use "canonical url"-->
+<dom-module id="mm-region">
+  <template>
+    <style>
+      /* Put CSS here */
+    </style>
+    <content></content>
+  </template>
+<script>
+  Polymer({
+    is: 'mm-region',
+    properties: { // Data attributes / argument
+      name: String,
+      hidden: {
+        type: Boolean,
+        value: false,
+      }
+    },
+    ready: function () {
+      // JavaScript code to run when the element is ready (loaded on the page).
+    }
+  });
+</script>
+</dom-module>
+```
+
+  >  Note: always use relative URL like "../package-name/element-name.html" in your Polymer elements. Don't put "bower_components/" or "my-elements" in the path.
+
+
+See also: [Element project layout](https://www.polymer-project.org/1.0/docs/tools/polymer-cli#element-project-layout) | [Local DOM](https://www.polymer-project.org/1.0/start/first-element/step-2) | [Lifecycle callbacks](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks)
+
+In your Twig template (where you want to put your element), use the following:
+```twig
+{% polymer import 'mm-region/mm-region.html' %}  {# this will add a <link> to the page #}
+<mm-region{{ attributes }}
+          {{ !active ? 'hidden="true"' }}        {# Tip: do not put a conditional attribute as the last attribute #}
+          name="{{ name ]}">
+{{ content }} 
+</mm-region>
+```
+
 ## CSS styling
+### Style module
+To simply code and to reuse styling, you may put CSS in a seperate element called "style module" and reference it in your main element.
+
+`my-element/mm-region/mm-region-styles.html`:
+```html
+<link rel="import" href="../polymer/polymer.html">
+<dom-module id="mm-region-styles">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+</dom-module>
+```
+
+`my-element/mm-region/mm-region.html`:
+```html
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="mm-region-styles.html">
+
+<dom-module id="mm-region">
+  <template>
+    <style include="mm-region-styles"></style>
+    ...
+  </template>
+...
+</dom-module>
+
+```
+
+See also: [Shared style](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)

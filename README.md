@@ -1,13 +1,16 @@
 # Monomer (Polymer Base Theme for Drupal)
+Monomer is a Drupal 8 base theme that allows theme builders to use Polymer elements in their theme design. 
 
-`Polymer` namespace is already taken on d.o. New name candidate: `Monomer`.
-
+# Dependencies
+ - [Twig Polymer Extension](https://github.com/ztl8702/twig_polymer/tree/dev) module.
+ - Node.js and Bower.
+ 
 ## Installation procedure
-  - Install [twig_polymer](https://github.com/ztl8702/twig_polymer/tree/dev).
+  - Install [Twig Polymer Extension](https://github.com/ztl8702/twig_polymer/tree/dev).
   - Download this theme.
   - Run `bower install` in the downloaded theme.
 
-## [Demo](https://github.com/ztl8702/polydemo/tree/polymer)
+## [Demos](https://github.com/ztl8702/polydemo/tree/polymer)
 
 ## Development guides
 [Development](docs/dev.md)
@@ -16,7 +19,7 @@
 According to latest spec, `<content>` element is [being deprecated](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/content) in favor of `<slot>`. However, Polymer still uses `<content>` and there is no clear documentation about `<slot>`.
 For the time being we will use `<content>` but need to watch closely at updates in Polymer.
 
-## Reusable Components
+## Pre-built Reusable Components
 _(Prefix `mm-` stands for `Monomer`.)_
 
  - grid
@@ -45,5 +48,6 @@ However, this could also mean less ability for customization.
 To access more raw variables in the original Twig template (which are often big HTML blocs), override the respective Twig template in your sub-theme.
 
 
-## Tutorial: Creating a sub-theme
- - See the [guide](docs/guide.md).
+## [Getting Started Guide](docs/guide.md)
+
+## [Tutorial: Building a simple studio site]()
