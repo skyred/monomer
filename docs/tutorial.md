@@ -95,6 +95,9 @@ my-elements/
     ├── my-page.html
     └── my-page-styles.html
 ```
+
+> Tip: If you have Drupal Console installed, you can use the command `drupal polymer:element` to generate the boilerplate code for your Polymer element.
+
 ## Step 1: set up basic page layout
 Override the template `page.html.twig` to use our `<my-page>` element.
 
