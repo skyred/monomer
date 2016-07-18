@@ -101,7 +101,7 @@ See also: [Shared style](https://www.polymer-project.org/1.0/docs/devguide/styli
 There are some special selectors for styling Web Components and their children. These selectors are what allows us to encapsulate 
 styling inside an element.
 
- 1. #### :host and :host-context
+#### 1. :host and :host-context
   `:host` refers to the element itself.
 ```css
   :host {
@@ -130,7 +130,7 @@ styling inside an element.
     </div>
   */
 ```  
- 2. #### ::content
+#### 2.  ::content
   Select LightDOM children of an element. Example:
 ```css
   ::content #header{
