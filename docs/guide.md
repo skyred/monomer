@@ -41,7 +41,7 @@ Although in a web app, it is ideal to build blackbox elements; in designing a Dr
 </dom-module>
 ```
 
-  >  Note: always use relative URL like "../package-name/element-name.html" in your Polymer elements. Don't put "bower_components/" or "my-elements" in the path.
+  >  Note: always use relative URL like "../package-name/element-name.html" in your Polymer elements. Do NOT put "bower_components/" or "my-elements/" in the path.
 
 
 See also: [Element project layout](https://www.polymer-project.org/1.0/docs/tools/polymer-cli#element-project-layout) | [Local DOM](https://www.polymer-project.org/1.0/start/first-element/step-2) | [Lifecycle callbacks](https://www.polymer-project.org/1.0/docs/devguide/registering-elements#lifecycle-callbacks)
@@ -90,3 +90,38 @@ To simply code and to reuse styling, you may put CSS in a seperate element calle
 ```
 
 See also: [Shared style](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
+
+### CSS selectors for Web Components
+
+ 1. #### :host and :host-context
+  `:host` refers to the element itself.
+```css
+  :host {
+    display: block; 
+    background: #fff;
+  }
+  
+  :host([hidden]) {
+    display: none;
+  } 
+  /* This matches elements like: <mm-region hidden> </mm-region> */
+```
+  > Tip: Web Components are by default `inline`. However in designing a theme, most of the time we need `block`. 
+  So, remember to write `display: block` in `:host`. 
+  
+  `host-context` matches whatever class/id/attributes on the element or its parent(s):
+```css
+  :host-context(.main-content) {
+    display: block;
+    font-size: 2em;
+  }
+  /* This matches elements like:
+    <div class="main-content">
+      <mm-region>
+      </mm-region>
+    </div>
+  */
+```  
+ 2. #### ::content
+ 
+See also: [ShadowDOM CSS cheat sheet](http://robdodson.me/shadow-dom-css-cheat-sheet/)

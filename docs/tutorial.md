@@ -1,13 +1,14 @@
 # Tutorial: Building a simple studio site with Monomer base theme in Drupal 8
 
-Before reading this, make sure you have read [Getting Started Guide](guide.md)
+Before reading this, make sure you have read [Getting Started Guide](guide.md).
 
 ## Goal
 We are building a website like this:
 
 ![Studio](animations.gif)
 
-[Live demo](http://monomerdemok87tjp6c5v.devcloud.acquia-sites.com/)
+Check out the [Live demo](http://monomerdemok87tjp6c5v.devcloud.acquia-sites.com/) or [Code repo](https://github.com/ztl8702/polymer-demo).
+
 
 ## Setting up folder structure
  - Create a `studio` folder in `themes` folder of your Drupal 8 installation.
@@ -23,10 +24,7 @@ regions:
   header: Header
   primary_menu: 'Primary menu'
   highlighted: Highlighted
-  featured_top: 'Featured top'
-  breadcrumb: Breadcrumb
   content: Content
-  footer: 'Footer'
 libraries-override:
   classy/base: false
 ```
@@ -45,12 +43,62 @@ libraries-override:
     └── ...
 ```
  - Optionally, you can add a `.gitignore` file and exclude `bower_components` from your repository.
- 
-## Auto-collapse header
 
-## Front page view with animation
+## Anatomy of page layout
+![Structure](tutorial-0.png)
 
-## Content pages
+We are going to create 3 custom Polymer elements:
+ - `<my-page>`: Overall page wrapper.
+ - `<my-home>`: Frontpage view.
+ - `<my-node>`: Displaying node content.
+
+Set up the following files in `my-elements/`:
+```
+my-elements/
+├── my-home
+│   ├── my-home.html
+│   └── my-home-styles.html
+├── my-node
+│   ├── my-node.html
+│   └── my-node-styles.html
+└── my-page
+    ├── image
+    │   └── techyizu_header_bg.jpg
+    ├── my-page.html
+    └── my-page-styles.html
+```
+## Step 1: set up basic page layout
+Override the template `page.html.twig` to use our `<my-page>` element.
+
+`templates/page.html.twig`:
+
+```twig
+{% polymer import "my-page/my-page.html" %}
+<div class="layout-container">
+  <my-page>
+    <header role="banner">
+      {{ page.header }}
+    </header>
+    {{ page.primary_menu }}
+    {{ page.highlighted }}
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <my-app-content>
+      {{ page.content }}
+    </my-app-content>{# /.layout-content #}
+    {% if page.footer %}
+      <footer role="contentinfo">
+        {{ page.footer }}
+      </footer>
+    {% endif %}
+  </my-page>
+</div>{# /.layout-container #}
+```
+
+## Step 2: Auto-collapse header
+
+## Step 3: Front page view with animation
+
+## Step 4: Content pages
 
 
 ## Drupal-specific tweaks and tricks
