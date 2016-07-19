@@ -31,3 +31,7 @@ function monomer_preprocess_menu_local_tasks(&$variables) {
     $variables[$type] = $tabs;
   }
 }
+
+function monomer_preprocess_input__submit(&$variables) {
+  $variables['value'] = $variables['element']['#value'];
+}
