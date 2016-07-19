@@ -3,16 +3,23 @@
 Before reading this, make sure you have read [Getting Started Guide](guide.md).
 
 ## Table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
 - [Goal](#goal)
 - [Setting up folder structure](#setting-up-folder-structure)
 - [Drupal Configuration](#drupal-configuration)
 - [An anatomy of page layout](#an-anatomy-of-page-layout)
 - [Step 1: set up basic page layout](#step-1-set-up-basic-page-layout)
-- [Step 2: auto-collapse header](#step-2-auto-collapse-header)
-- [Step 3: main menu](#step-3-main-menu)
-- [Step 4: front page view with animations](#step-4-front-page-view-with-animations)
-- [Step 5: content pages](#step-5-content-pages)
+- [Step 2: Auto-collapse header](#step-2-auto-collapse-header)
+- [Step 3: Main menu](#step-3-main-menu)
+- [Step 4: Front page view with animations](#step-4-front-page-view-with-animations)
+- [Step 5: Content pages](#step-5-content-pages)
 - [Step 6: fade-in effects on content pages](#step-6-fade-in-effects-on-content-pages)
+- [Drupal-specific tweaks and tricks](#drupal-specific-tweaks-and-tricks)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Goal
 We are building a website like this:

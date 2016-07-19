@@ -1,6 +1,23 @@
 # Monomer (Polymer Base Theme for Drupal)
 Monomer is a Drupal 8 base theme that allows theme builders to use Polymer elements in their theme design. 
 
+## Table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Dependencies](#dependencies)
+  - [Installation procedure](#installation-procedure)
+  - [Demos](#demos)
+  - [Getting Started Guide](#getting-started-guide)
+  - [Tutorial: Building a simple studio site](#tutorial-building-a-simple-studio-site)
+  - [Warning](#warning)
+  - [Pre-built Reusable Components](#pre-built-reusable-components)
+  - [Development specs](#development-specs)
+  - [Simplified Variables](#simplified-variables)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Dependencies
  - [Twig Polymer Extension](https://github.com/ztl8702/twig_polymer/tree/dev) module.
  - Node.js and Bower.
