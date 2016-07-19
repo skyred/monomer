@@ -108,7 +108,12 @@ my-elements/
     └── my-page-styles.html
 ```
 
-> Tip: If you have Drupal Console installed, you can use the command [`drupal polymer:element`](https://github.com/ztl8702/twig_polymer#drupal-console-command) to generate the boilerplate code for your Polymer element.
+> Tip: If you have Drupal Console installed, you can use the command [`drupal polymer:element`](https://github.com/ztl8702/twig_polymer#drupal-console-command) to generate the boilerplate code for your Polymer element:
+> ```
+> drupal polymer:element --theme studio --package my-home --element my-home --create-style
+> drupal polymer:element --theme studio --package my-page --element my-page --create-style
+> drupal polymer:element --theme studio --package my-node --element my-node --create-style
+> ```
 
 ### Step 1: set up basic page layout
 Override the template `page.html.twig` to use our `<my-page>` element.
@@ -136,6 +141,8 @@ Override the template `page.html.twig` to use our `<my-page>` element.
   </my-page>
 </div>{# /.layout-container #}
 ```
+
+See also: [`{% polymer element %}`](https://github.com/ztl8702/twig_polymer/tree/dev#usage-1)
 
 `my-elements/my-page/my-page.html`:
 
