@@ -8,15 +8,17 @@ Before reading this, make sure you have read [Getting Started Guide](guide.md).
 
 
 - [Goal](#goal)
-- [Setting up folder structure](#setting-up-folder-structure)
-- [Drupal Configuration](#drupal-configuration)
-- [An anatomy of page layout](#an-anatomy-of-page-layout)
-- [Step 1: set up basic page layout](#step-1-set-up-basic-page-layout)
-- [Step 2: Auto-collapse header](#step-2-auto-collapse-header)
-- [Step 3: Main menu](#step-3-main-menu)
-- [Step 4: Front page view with animations](#step-4-front-page-view-with-animations)
-- [Step 5: Content pages](#step-5-content-pages)
-- [Step 6: fade-in effects on content pages](#step-6-fade-in-effects-on-content-pages)
+- [Preparation](#preparation)
+  - [Setting up folder structure](#setting-up-folder-structure)
+  - [Drupal Configuration](#drupal-configuration)
+- [Building the theme](#building-the-theme)
+  - [An anatomy of page layout](#an-anatomy-of-page-layout)
+  - [Step 1: set up basic page layout](#step-1-set-up-basic-page-layout)
+  - [Step 2: Auto-collapse header](#step-2-auto-collapse-header)
+  - [Step 3: Main menu](#step-3-main-menu)
+  - [Step 4: Front page view with animations](#step-4-front-page-view-with-animations)
+  - [Step 5: Content pages](#step-5-content-pages)
+  - [Step 6: fade-in effects on content pages](#step-6-fade-in-effects-on-content-pages)
 - [Drupal-specific tweaks and tricks](#drupal-specific-tweaks-and-tricks)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -28,8 +30,9 @@ We are building a website like this:
 
 Check out the [Live demo](http://monomerdemok87tjp6c5v.devcloud.acquia-sites.com/) or [Code repo](https://github.com/ztl8702/polymer-demo).
 
+## Preparation
 
-## Setting up folder structure
+### Setting up folder structure
  - Create a `studio` folder in `themes` folder of your Drupal 8 installation.
  - Create a `studio.info.yml` file in your theme folder.
 ```yaml
@@ -63,7 +66,7 @@ libraries-override:
 ```
  - Optionally, you can add a `.gitignore` file and exclude `bower_components` from your repository.
 
-## Drupal Configuration
+### Drupal Configuration
 
 The site we are creating has two content types. To keep things simple, we are going to configure them as: 
   - Event (machine name: `event`). 
@@ -79,7 +82,9 @@ For the front page, we are going to modify the `frontpage` view to displaying 12
 
 Create a new "Markdown" editor format, which doesn't do any processing on the content. We will use it later.
 
-## An anatomy of page layout
+## Building the theme
+
+### An anatomy of page layout
 ![Structure](tutorial-0.png)
 
 We are going to create 3 custom Polymer elements:
@@ -103,9 +108,9 @@ my-elements/
     └── my-page-styles.html
 ```
 
-> Tip: If you have Drupal Console installed, you can use the command `drupal polymer:element` to generate the boilerplate code for your Polymer element.
+> Tip: If you have Drupal Console installed, you can use the command [`drupal polymer:element`](https://github.com/ztl8702/twig_polymer#drupal-console-command) to generate the boilerplate code for your Polymer element.
 
-## Step 1: set up basic page layout
+### Step 1: set up basic page layout
 Override the template `page.html.twig` to use our `<my-page>` element.
 
 `templates/page.html.twig`:
@@ -143,7 +148,8 @@ Override the template `page.html.twig` to use our `<my-page>` element.
 </template>
 ...
 ```
-## Step 2: Auto-collapse header
+
+### Step 2: Auto-collapse header
 We are going to use `<paper-scroll-header-panel>` element. First install it via Bower.
 
 ```
@@ -208,7 +214,7 @@ Add styles accordingly (see [code](https://github.com/ztl8702/polymer-demo/theme
 
 See also: [`<paper-scroll-header-panel>` docs on Polymer Catalog](https://elements.polymer-project.org/elements/paper-scroll-header-panel)
 
-## Step 3: Main menu
+### Step 3: Main menu
 We will use `<paper-tabs>` for the main menu, which automatically includes ripple effects on tap.
 
 `templates/menu--main.html.twig`:
@@ -242,7 +248,7 @@ Also, modify the block and region templates to get rid of excessive wrappers:
 {{ content }}
 ```
 
-## Step 4: Front page view with animations
+### Step 4: Front page view with animations
 
 As showcased at the beginning, we want our frontpage view to have an entry animation, based on [this official demo](https://elements.polymer-project.org/bower_components/neon-animation/demo/load/index.html).
 ![screen](tutorial-1.png)
@@ -342,7 +348,7 @@ but remember to rewrite CSS selectors using `::content` and `:host::content`. Ex
 ```
 
 See also: [Neon animations](https://elements.polymer-project.org/elements/neon-animation)
-## Step 5: Content pages
+### Step 5: Content pages
 This step is easy, just create a `<my-node>` element to display and style all content pages.
 
 In this site we are building, we use Markdown to write node body, and render the content client side using the [`<marked-element>`](https://elements.polymer-project.org/elements/marked-element).
@@ -393,11 +399,12 @@ To use the `<my-node>` element, modify the template of the relevant content type
 
 Do the same to `templates/node--event.html.twig`.
 
-## Step 6: fade-in effects on content pages
+### Step 6: fade-in effects on content pages
 
 Similar to Step 4, but much simpler. 
 
 Just add `NeonAnimationRunnerBehavior` and `animationConfig`; then run the animation in `ready` function.
 
 See also: [Animation in Monomer theme](https://github.com/ztl8702/polydemo/tree/polymer#animation)
+
 ## Drupal-specific tweaks and tricks
