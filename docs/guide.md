@@ -25,19 +25,20 @@
  - Save time: Take advantage of already made elements on (Polymer Catalog)[https://elements.polymer-project.org/], [Custom Elements](https://customelements.io/) or [Vaadin Elements](https://vaadin.com/elements).
  
 Polymer is just one of the libraries based on Web Components. Currently, it is the one that is most widely used in production.
- 
+
 ## Real life examples
 
  - One website that uses Polymer elements in production is [ea.com](http://www.ea.com/). Inspect the site, view its source code and you will find tags like `<ea-hero>`, `<ea-section>` etc. 
    If you are technical, you may also dig into the [source code](http://pl.ea.com/branch/ea-play-stable-3/elements/ea-elements.html) of their elements.
 
- - [Google Project Fi website]（https://fi.google.com/about/) uses some Polymer elements, primarily in the navbar.
+ - [Google Project Fi website](https://fi.google.com/about/) uses some Polymer elements, primarily in the navbar.
 
 > Note: We are talking about using Web Components in (traditional) website designs, NOT single-page web apps. Although the boundary between websites and web apps could be blurred, 
 > a key difference is that web apps have all UI-logic done client-side, whereas websites (like those powered by Drupal, WordPress, etc.) relies on the server to generate each page and respond to user interactions.
 > 
 > In the case of a website, although Web Components can be used to provide some UI enhancements (e.g. encapsulated styling, animations, simple interactions), key behaviours (especially those related to state changes, like page navigations and form submissions) are done by the server. 
-> These means we are using Web Components to enhance the experience of traditional websites, and they are NOT meant to be replacement of web apps.
+>
+> This means we are using Web Components to enhance the experience of traditional websites, and they are NOT meant to be replacement of web apps.
 
 ## Wrapper elements vs. Blackbox elements
 
