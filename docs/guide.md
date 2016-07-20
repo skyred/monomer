@@ -5,6 +5,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
+- [Why Web Components? Why Polymer?](#why-web-components-why-polymer)
+- [Real life examples](#real-life-examples)
 - [Wrapper elements vs. Blackbox elements](#wrapper-elements-vs-blackbox-elements)
 - [Installing dependencies via Bower](#installing-dependencies-via-bower)
 - [Creating Polymer element and using it in Twig templates](#creating-polymer-element-and-using-it-in-twig-templates)
@@ -15,6 +17,27 @@
     - [2.  ::content](#2--content)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Why Web Components? Why Polymer?
+ - Encapsulation: Web Components are bundled with CSS and JS. This makes them easy to "carry around" and put into different sites without having to worry about referencing the proper files or contaminating the page.
+ - Behaviours included: with libraries like Polymer you can easily built interactive page elements such as collapsible menus and slideshows. Traditionally, we need to load additional JS files to achieve that. With Web Components, the JS code is still there, but sealed inside the component as if a black box.  
+ - Cleaner markup: instead of having a lot of wrapper elements (<div>s and <span>s), putting them in Web Components makes the markup of the page cleaner and more semantic.
+ - Save time: Take advantage of already made elements on (Polymer Catalog)[https://elements.polymer-project.org/], [Custom Elements](https://customelements.io/) or [Vaadin Elements](https://vaadin.com/elements).
+ 
+Polymer is just one of the libraries based on Web Components. Currently, it is the one that is most widely used in production.
+ 
+## Real life examples
+
+ - One website that uses Polymer elements in production is [ea.com](http://www.ea.com/). Inspect the site, view its source code and you will find tags like `<ea-hero>`, `<ea-section>` etc. 
+   If you are technical, you may also dig into the [source code](http://pl.ea.com/branch/ea-play-stable-3/elements/ea-elements.html) of their elements.
+
+ - [Google Project Fi website]（https://fi.google.com/about/) uses some Polymer elements, primarily in the navbar.
+
+> Note: We are talking about using Web Components in (traditional) website designs, NOT single-page web apps. Although the boundary between websites and web apps could be blurred, 
+> a key difference is that web apps have all UI-logic done client-side, whereas websites (like those powered by Drupal, WordPress, etc.) relies on the server to generate each page and respond to user interactions.
+> 
+> In the case of a website, although Web Components can be used to provide some UI enhancements (e.g. encapsulated styling, animations, simple interactions), key behaviours (especially those related to state changes, like page navigations and form submissions) are done by the server. 
+> These means we are using Web Components to enhance the experience of traditional websites, and they are NOT meant to be replacement of web apps.
 
 ## Wrapper elements vs. Blackbox elements
 
