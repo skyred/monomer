@@ -33,6 +33,8 @@ Polymer is just one of the libraries based on Web Components. Currently, it is t
 
  - [Google Project Fi website](https://fi.google.com/about/) uses some Polymer elements, primarily in the navbar.
 
+ - [Braid.io](https://braid.io/)
+
 > Note: We are talking about using Web Components in (traditional) website designs, NOT single-page web apps. Although the boundary between websites and web apps could be blurred, 
 > a key difference is that web apps have all UI-logic done client-side, whereas websites (like those powered by Drupal, WordPress, etc.) relies on the server to generate each page and respond to user interactions.
 > 
