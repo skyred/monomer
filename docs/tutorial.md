@@ -26,7 +26,7 @@ Before reading this, make sure you have read [Getting Started Guide](guide.md).
 ## Goal
 We are building a website like this:
 
-![Studio](animations.gif)
+![Studio](animations-after.gif)
 
 Check out the [Live demo](http://monomerdemok87tjp6c5v.devcloud.acquia-sites.com/) or [Code repo](https://github.com/ztl8702/polymer-demo).
 
