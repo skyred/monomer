@@ -125,7 +125,7 @@ to override a style module by creating a filename with the same name and under t
 For example, to style a region, copy `monomer/my-elements/mm-region/mm-region-styles.html` to `yourtheme/my-elements/mm-region/mm-region-styles.html`. The `mm-region-styles.html` in your
 theme will be served instead of the one in Monomer.
 
-See also: [Tutorial: Styling buttons](docs/tutorial-button.md)
+See also: [Tutorial: Styling buttons](tutorial-button.md)
 
 ### 2. Override the element
 If you need to customize the **DOM template** of an element or add new behaviours. Similar to above.
@@ -134,7 +134,7 @@ If you need to customize the **DOM template** of an element or add new behaviour
 Sometimes override an element is not enough. For example, if you want to use different elements for different regions on the page, then you need to create Twig templates like `region--header.html.twig`
  and `region--footer.html.twig`. This is the same as how you would do in a normal Drupal 8 theme. You can look at the [Twig templates](../templates) in Monomer to gain some insights.
 
-See also: [Tutorial: Building a simple studio site](docs/tutorial.md)
+See also: [Tutorial: Building a simple studio site](tutorial.md)
 
 ## CSS styling
 ### Style module
