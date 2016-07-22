@@ -10,6 +10,10 @@
 - [Wrapper elements vs. Blackbox elements](#wrapper-elements-vs-blackbox-elements)
 - [Installing dependencies via Bower](#installing-dependencies-via-bower)
 - [Creating Polymer element and using it in Twig templates](#creating-polymer-element-and-using-it-in-twig-templates)
+- [How to use/extend the Monomer base theme](#how-to-useextend-the-monomer-base-theme)
+  - [1. Override the style module](#1-override-the-style-module)
+  - [2. Override the element](#2-override-the-element)
+  - [3. Override Twig templates](#3-override-twig-templates)
 - [CSS styling](#css-styling)
   - [Style module](#style-module)
   - [CSS selectors for Web Components](#css-selectors-for-web-components)
@@ -108,6 +112,25 @@ In your Twig template (where you want to put your element), use the following:
 {{ content }} 
 </mm-region>
 ```
+
+## How to use/extend the Monomer base theme
+
+To use Monomer, you need to create a subtheme that has `monomer` as the base theme. There are three levels of customizations that you can do, 
+depending on your need.
+
+### 1. Override the style module 
+Most [pre-built Polymer elements](prebuilt-elements.md) in Monomer has a style module (filename ending with `-styles.html`) which contains the CSS rules for the element. You can choose
+to override a style module by creating a filename with the same name and under the same package folder in the `/my-elements` folder of your theme. 
+
+For example, to style a region, copy `monomer/my-elements/mm-region/mm-region-styles.html` to `yourtheme/my-elements/mm-region/mm-region-styles.html`. The `mm-region-styles.html` in your
+theme will be served instead of the one in Monomer.
+
+### 2. Override the element
+If you need to customize the **DOM template** of an element or add new behaviours. Similar to above.
+
+### 3. Override Twig templates
+Sometimes override an element is not enough. For example, if you want to use different elements for different regions on the page, then you need to create Twig templates like `region--header.html.twig`
+ and `region--footer.html.twig`. This is the same as how you would do in a normal Drupal 8 theme. You can look at the [Twig templates](../templates) in Monomer to gain some insights.
 
 ## CSS styling
 ### Style module
